@@ -1,0 +1,541 @@
+[
+  {
+    "id": "c16-1m-sessions1",
+    "scenario": "c16-1m",
+    "file": "scenarios/c/c16-imap-append-1m.yaml",
+    "title": "IMAP APPEND of 1 MB messages",
+    "family": "imap",
+    "mode": "latency",
+    "targets": [
+      "stalwart",
+      "dovecot"
+    ],
+    "variants": [
+      {
+        "target": "dovecot",
+        "name": "fsync-always"
+      }
+    ],
+    "cache": "warm",
+    "load_hosts": 1,
+    "repetitions": 3,
+    "dataset": "c",
+    "group": "c6"
+  },
+  {
+    "id": "c16-1m-sessions16",
+    "scenario": "c16-1m",
+    "file": "scenarios/c/c16-imap-append-1m.yaml",
+    "title": "IMAP APPEND of 1 MB messages",
+    "family": "imap",
+    "mode": "latency",
+    "targets": [
+      "stalwart",
+      "dovecot"
+    ],
+    "variants": [
+      {
+        "target": "dovecot",
+        "name": "fsync-always"
+      }
+    ],
+    "cache": "warm",
+    "load_hosts": 1,
+    "repetitions": 3,
+    "dataset": "c",
+    "group": "c6"
+  },
+  {
+    "id": "c16-sessions1-4k",
+    "scenario": "c16",
+    "file": "scenarios/c/c16-imap-append.yaml",
+    "title": "IMAP APPEND per size bucket (APPEND to tagged OK)",
+    "family": "imap",
+    "mode": "latency",
+    "targets": [
+      "stalwart",
+      "dovecot"
+    ],
+    "variants": [
+      {
+        "target": "dovecot",
+        "name": "fsync-always"
+      }
+    ],
+    "cache": "warm",
+    "load_hosts": 1,
+    "repetitions": 3,
+    "dataset": "c",
+    "group": "c6"
+  },
+  {
+    "id": "c16-sessions1-64k",
+    "scenario": "c16",
+    "file": "scenarios/c/c16-imap-append.yaml",
+    "title": "IMAP APPEND per size bucket (APPEND to tagged OK)",
+    "family": "imap",
+    "mode": "latency",
+    "targets": [
+      "stalwart",
+      "dovecot"
+    ],
+    "variants": [
+      {
+        "target": "dovecot",
+        "name": "fsync-always"
+      }
+    ],
+    "cache": "warm",
+    "load_hosts": 1,
+    "repetitions": 3,
+    "dataset": "c",
+    "group": "c6"
+  },
+  {
+    "id": "c16-sessions16-4k",
+    "scenario": "c16",
+    "file": "scenarios/c/c16-imap-append.yaml",
+    "title": "IMAP APPEND per size bucket (APPEND to tagged OK)",
+    "family": "imap",
+    "mode": "latency",
+    "targets": [
+      "stalwart",
+      "dovecot"
+    ],
+    "variants": [
+      {
+        "target": "dovecot",
+        "name": "fsync-always"
+      }
+    ],
+    "cache": "warm",
+    "load_hosts": 1,
+    "repetitions": 3,
+    "dataset": "c",
+    "group": "c6"
+  },
+  {
+    "id": "c16-sessions16-64k",
+    "scenario": "c16",
+    "file": "scenarios/c/c16-imap-append.yaml",
+    "title": "IMAP APPEND per size bucket (APPEND to tagged OK)",
+    "family": "imap",
+    "mode": "latency",
+    "targets": [
+      "stalwart",
+      "dovecot"
+    ],
+    "variants": [
+      {
+        "target": "dovecot",
+        "name": "fsync-always"
+      }
+    ],
+    "cache": "warm",
+    "load_hosts": 1,
+    "repetitions": 3,
+    "dataset": "c",
+    "group": "c6"
+  },
+  {
+    "id": "c17",
+    "scenario": "c17",
+    "file": "scenarios/c/c17-imap-mixed.yaml",
+    "title": "Mixed IMAP workload capacity: mail-client-like sessions (login, select, sync, fetch new, read, flag, search, move, delete, logout), open loop of session arrivals",
+    "family": "imap",
+    "mode": "throughput",
+    "targets": [
+      "stalwart",
+      "dovecot"
+    ],
+    "variants": [
+      {
+        "target": "dovecot",
+        "name": "fsync-always"
+      }
+    ],
+    "cache": "warm",
+    "load_hosts": "all",
+    "repetitions": 3,
+    "dataset": "c",
+    "group": "c6"
+  },
+  {
+    "id": "l12-sort-large100k-date",
+    "scenario": "l12-sort",
+    "file": "scenarios/c/large/l12-sort.yaml",
+    "title": "Large mailboxes: SORT by date, from and subject (warm cache)",
+    "family": "imap-large",
+    "mode": "latency",
+    "targets": [
+      "stalwart",
+      "dovecot"
+    ],
+    "variants": [],
+    "cache": "warm",
+    "load_hosts": 1,
+    "repetitions": 2,
+    "dataset": "c",
+    "group": "c6"
+  },
+  {
+    "id": "l12-sort-large100k-from",
+    "scenario": "l12-sort",
+    "file": "scenarios/c/large/l12-sort.yaml",
+    "title": "Large mailboxes: SORT by date, from and subject (warm cache)",
+    "family": "imap-large",
+    "mode": "latency",
+    "targets": [
+      "stalwart",
+      "dovecot"
+    ],
+    "variants": [],
+    "cache": "warm",
+    "load_hosts": 1,
+    "repetitions": 2,
+    "dataset": "c",
+    "group": "c6"
+  },
+  {
+    "id": "l12-sort-large100k-subject",
+    "scenario": "l12-sort",
+    "file": "scenarios/c/large/l12-sort.yaml",
+    "title": "Large mailboxes: SORT by date, from and subject (warm cache)",
+    "family": "imap-large",
+    "mode": "latency",
+    "targets": [
+      "stalwart",
+      "dovecot"
+    ],
+    "variants": [],
+    "cache": "warm",
+    "load_hosts": 1,
+    "repetitions": 2,
+    "dataset": "c",
+    "group": "c6"
+  },
+  {
+    "id": "l12-sort-large10k-date",
+    "scenario": "l12-sort",
+    "file": "scenarios/c/large/l12-sort.yaml",
+    "title": "Large mailboxes: SORT by date, from and subject (warm cache)",
+    "family": "imap-large",
+    "mode": "latency",
+    "targets": [
+      "stalwart",
+      "dovecot"
+    ],
+    "variants": [],
+    "cache": "warm",
+    "load_hosts": 1,
+    "repetitions": 2,
+    "dataset": "c",
+    "group": "c6"
+  },
+  {
+    "id": "l12-sort-large10k-from",
+    "scenario": "l12-sort",
+    "file": "scenarios/c/large/l12-sort.yaml",
+    "title": "Large mailboxes: SORT by date, from and subject (warm cache)",
+    "family": "imap-large",
+    "mode": "latency",
+    "targets": [
+      "stalwart",
+      "dovecot"
+    ],
+    "variants": [],
+    "cache": "warm",
+    "load_hosts": 1,
+    "repetitions": 2,
+    "dataset": "c",
+    "group": "c6"
+  },
+  {
+    "id": "l12-sort-large10k-subject",
+    "scenario": "l12-sort",
+    "file": "scenarios/c/large/l12-sort.yaml",
+    "title": "Large mailboxes: SORT by date, from and subject (warm cache)",
+    "family": "imap-large",
+    "mode": "latency",
+    "targets": [
+      "stalwart",
+      "dovecot"
+    ],
+    "variants": [],
+    "cache": "warm",
+    "load_hosts": 1,
+    "repetitions": 2,
+    "dataset": "c",
+    "group": "c6"
+  },
+  {
+    "id": "l12-sort-large250k-date",
+    "scenario": "l12-sort",
+    "file": "scenarios/c/large/l12-sort.yaml",
+    "title": "Large mailboxes: SORT by date, from and subject (warm cache)",
+    "family": "imap-large",
+    "mode": "latency",
+    "targets": [
+      "stalwart",
+      "dovecot"
+    ],
+    "variants": [],
+    "cache": "warm",
+    "load_hosts": 1,
+    "repetitions": 2,
+    "dataset": "c",
+    "group": "c6"
+  },
+  {
+    "id": "l12-sort-large250k-from",
+    "scenario": "l12-sort",
+    "file": "scenarios/c/large/l12-sort.yaml",
+    "title": "Large mailboxes: SORT by date, from and subject (warm cache)",
+    "family": "imap-large",
+    "mode": "latency",
+    "targets": [
+      "stalwart",
+      "dovecot"
+    ],
+    "variants": [],
+    "cache": "warm",
+    "load_hosts": 1,
+    "repetitions": 2,
+    "dataset": "c",
+    "group": "c6"
+  },
+  {
+    "id": "l12-sort-large250k-subject",
+    "scenario": "l12-sort",
+    "file": "scenarios/c/large/l12-sort.yaml",
+    "title": "Large mailboxes: SORT by date, from and subject (warm cache)",
+    "family": "imap-large",
+    "mode": "latency",
+    "targets": [
+      "stalwart",
+      "dovecot"
+    ],
+    "variants": [],
+    "cache": "warm",
+    "load_hosts": 1,
+    "repetitions": 2,
+    "dataset": "c",
+    "group": "c6"
+  },
+  {
+    "id": "l12-thread-large100k",
+    "scenario": "l12-thread",
+    "file": "scenarios/c/large/l12-thread.yaml",
+    "title": "Large mailboxes: THREAD REFERENCES (warm cache)",
+    "family": "imap-large",
+    "mode": "latency",
+    "targets": [
+      "stalwart",
+      "dovecot"
+    ],
+    "variants": [],
+    "cache": "warm",
+    "load_hosts": 1,
+    "repetitions": 2,
+    "dataset": "c",
+    "group": "c6"
+  },
+  {
+    "id": "l12-thread-large10k",
+    "scenario": "l12-thread",
+    "file": "scenarios/c/large/l12-thread.yaml",
+    "title": "Large mailboxes: THREAD REFERENCES (warm cache)",
+    "family": "imap-large",
+    "mode": "latency",
+    "targets": [
+      "stalwart",
+      "dovecot"
+    ],
+    "variants": [],
+    "cache": "warm",
+    "load_hosts": 1,
+    "repetitions": 2,
+    "dataset": "c",
+    "group": "c6"
+  },
+  {
+    "id": "l12-thread-large250k",
+    "scenario": "l12-thread",
+    "file": "scenarios/c/large/l12-thread.yaml",
+    "title": "Large mailboxes: THREAD REFERENCES (warm cache)",
+    "family": "imap-large",
+    "mode": "latency",
+    "targets": [
+      "stalwart",
+      "dovecot"
+    ],
+    "variants": [],
+    "cache": "warm",
+    "load_hosts": 1,
+    "repetitions": 2,
+    "dataset": "c",
+    "group": "c6"
+  },
+  {
+    "id": "l13-store-large100k-all",
+    "scenario": "l13-store",
+    "file": "scenarios/c/large/l13-store.yaml",
+    "title": "Large mailboxes: STORE +FLAGS (\\Seen) on one message, 100 and 1:* (warm cache)",
+    "family": "imap-large",
+    "mode": "latency",
+    "targets": [
+      "stalwart",
+      "dovecot"
+    ],
+    "variants": [],
+    "cache": "warm",
+    "load_hosts": 1,
+    "repetitions": 2,
+    "dataset": "c",
+    "group": "c6"
+  },
+  {
+    "id": "l13-store-large100k-one",
+    "scenario": "l13-store",
+    "file": "scenarios/c/large/l13-store.yaml",
+    "title": "Large mailboxes: STORE +FLAGS (\\Seen) on one message, 100 and 1:* (warm cache)",
+    "family": "imap-large",
+    "mode": "latency",
+    "targets": [
+      "stalwart",
+      "dovecot"
+    ],
+    "variants": [],
+    "cache": "warm",
+    "load_hosts": 1,
+    "repetitions": 2,
+    "dataset": "c",
+    "group": "c6"
+  },
+  {
+    "id": "l13-store-large100k-range100",
+    "scenario": "l13-store",
+    "file": "scenarios/c/large/l13-store.yaml",
+    "title": "Large mailboxes: STORE +FLAGS (\\Seen) on one message, 100 and 1:* (warm cache)",
+    "family": "imap-large",
+    "mode": "latency",
+    "targets": [
+      "stalwart",
+      "dovecot"
+    ],
+    "variants": [],
+    "cache": "warm",
+    "load_hosts": 1,
+    "repetitions": 2,
+    "dataset": "c",
+    "group": "c6"
+  },
+  {
+    "id": "l13-store-large10k-all",
+    "scenario": "l13-store",
+    "file": "scenarios/c/large/l13-store.yaml",
+    "title": "Large mailboxes: STORE +FLAGS (\\Seen) on one message, 100 and 1:* (warm cache)",
+    "family": "imap-large",
+    "mode": "latency",
+    "targets": [
+      "stalwart",
+      "dovecot"
+    ],
+    "variants": [],
+    "cache": "warm",
+    "load_hosts": 1,
+    "repetitions": 2,
+    "dataset": "c",
+    "group": "c6"
+  },
+  {
+    "id": "l13-store-large10k-one",
+    "scenario": "l13-store",
+    "file": "scenarios/c/large/l13-store.yaml",
+    "title": "Large mailboxes: STORE +FLAGS (\\Seen) on one message, 100 and 1:* (warm cache)",
+    "family": "imap-large",
+    "mode": "latency",
+    "targets": [
+      "stalwart",
+      "dovecot"
+    ],
+    "variants": [],
+    "cache": "warm",
+    "load_hosts": 1,
+    "repetitions": 2,
+    "dataset": "c",
+    "group": "c6"
+  },
+  {
+    "id": "l13-store-large10k-range100",
+    "scenario": "l13-store",
+    "file": "scenarios/c/large/l13-store.yaml",
+    "title": "Large mailboxes: STORE +FLAGS (\\Seen) on one message, 100 and 1:* (warm cache)",
+    "family": "imap-large",
+    "mode": "latency",
+    "targets": [
+      "stalwart",
+      "dovecot"
+    ],
+    "variants": [],
+    "cache": "warm",
+    "load_hosts": 1,
+    "repetitions": 2,
+    "dataset": "c",
+    "group": "c6"
+  },
+  {
+    "id": "l13-store-large250k-all",
+    "scenario": "l13-store",
+    "file": "scenarios/c/large/l13-store.yaml",
+    "title": "Large mailboxes: STORE +FLAGS (\\Seen) on one message, 100 and 1:* (warm cache)",
+    "family": "imap-large",
+    "mode": "latency",
+    "targets": [
+      "stalwart",
+      "dovecot"
+    ],
+    "variants": [],
+    "cache": "warm",
+    "load_hosts": 1,
+    "repetitions": 2,
+    "dataset": "c",
+    "group": "c6"
+  },
+  {
+    "id": "l13-store-large250k-one",
+    "scenario": "l13-store",
+    "file": "scenarios/c/large/l13-store.yaml",
+    "title": "Large mailboxes: STORE +FLAGS (\\Seen) on one message, 100 and 1:* (warm cache)",
+    "family": "imap-large",
+    "mode": "latency",
+    "targets": [
+      "stalwart",
+      "dovecot"
+    ],
+    "variants": [],
+    "cache": "warm",
+    "load_hosts": 1,
+    "repetitions": 2,
+    "dataset": "c",
+    "group": "c6"
+  },
+  {
+    "id": "l13-store-large250k-range100",
+    "scenario": "l13-store",
+    "file": "scenarios/c/large/l13-store.yaml",
+    "title": "Large mailboxes: STORE +FLAGS (\\Seen) on one message, 100 and 1:* (warm cache)",
+    "family": "imap-large",
+    "mode": "latency",
+    "targets": [
+      "stalwart",
+      "dovecot"
+    ],
+    "variants": [],
+    "cache": "warm",
+    "load_hosts": 1,
+    "repetitions": 2,
+    "dataset": "c",
+    "group": "c6"
+  }
+]

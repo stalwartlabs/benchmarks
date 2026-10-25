@@ -1,0 +1,128 @@
+{
+  "schema": "mailbench/1",
+  "scenario": "l10-fetch-cold",
+  "cell": "l10-fetch-cold-large250k-flags_all",
+  "family": "imap-large",
+  "mode": "latency",
+  "target": "dovecot",
+  "profile": "c-reduced",
+  "hosts": [
+    "load1"
+  ],
+  "shards": [
+    "0/1"
+  ],
+  "dataset": "c",
+  "seed": 20261025,
+  "started_at_ms": 1792998321001,
+  "finished_at_ms": 1792998321507,
+  "rtt_us": {
+    "mean": 5378.1,
+    "min": 743,
+    "p50": 4723,
+    "p90": 8711,
+    "p95": 10303,
+    "p99": 19087,
+    "p999": 19087,
+    "max": 19087
+  },
+  "load": {
+    "max_duration": "1200s",
+    "model": "closed",
+    "samples": 1,
+    "session_ops": 1000,
+    "sessions": 1,
+    "think": "0s",
+    "warmup": "0s"
+  },
+  "slo": null,
+  "steps": [
+    {
+      "index": 0,
+      "target_rate": null,
+      "duration_s": 0.506052761,
+      "valid": true,
+      "slo_met": null,
+      "generator": {
+        "cpu_mean_pct": null,
+        "cpu_max_pct": null,
+        "arrivals": 0,
+        "late": 0,
+        "late_pct": 0.0,
+        "max_late_us": 0,
+        "dropped": 0
+      },
+      "ops": {
+        "imap.cold_op": {
+          "count": 1,
+          "errors": 0,
+          "error_rate": 0.0,
+          "throughput": 1.98,
+          "mean": 214976.0,
+          "min": 214912,
+          "p50": 215039,
+          "p90": 215039,
+          "p95": 215039,
+          "p99": 215039,
+          "p999": 215039,
+          "max": 215039,
+          "histogram": "HISTFAAAACR4nJNpmSzMwMDAwgABzFCaEURcm7yEwf4DRGBuFyMTAGegBbU=",
+          "items": {
+            "count": 1,
+            "sum": 250000,
+            "min": 250000,
+            "max": 250000,
+            "mean": 250000.0
+          }
+        },
+        "imap.fetch": {
+          "count": 1,
+          "errors": 0,
+          "error_rate": 0.0,
+          "throughput": 1.98,
+          "mean": 214976.0,
+          "min": 214912,
+          "p50": 215039,
+          "p90": 215039,
+          "p95": 215039,
+          "p99": 215039,
+          "p999": 215039,
+          "max": 215039,
+          "histogram": "HISTFAAAACR4nJNpmSzMwMDAwgABzFCaEURcm7yEwf4DRGBuFyMTAGegBbU=",
+          "items": {
+            "count": 1,
+            "sum": 250000,
+            "min": 250000,
+            "max": 250000,
+            "mean": 250000.0
+          }
+        },
+        "imap.select_cold": {
+          "count": 1,
+          "errors": 0,
+          "error_rate": 0.0,
+          "throughput": 1.98,
+          "mean": 137536.0,
+          "min": 137472,
+          "p50": 137599,
+          "p90": 137599,
+          "p95": 137599,
+          "p99": 137599,
+          "p999": 137599,
+          "max": 137599,
+          "histogram": "HISTFAAAACR4nJNpmSzMwMDAwgABzFCaEURcm7yEwf4DROBxAyMTAGiaBfE=",
+          "items": {
+            "count": 1,
+            "sum": 250000,
+            "min": 250000,
+            "max": 250000,
+            "mean": 250000.0
+          }
+        }
+      }
+    }
+  ],
+  "valid": true,
+  "best_step": null,
+  "best_rate": null
+}

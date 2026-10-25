@@ -1,0 +1,193 @@
+{
+  "schema": "mailbench/1",
+  "scenario": "c02-1m",
+  "cell": "c02-1m-sessions1-recipients10",
+  "family": "smtp-in",
+  "mode": "latency",
+  "target": "dovecot",
+  "profile": "c-reduced",
+  "hosts": [
+    "load1"
+  ],
+  "shards": [
+    "0/1"
+  ],
+  "dataset": "c",
+  "seed": 20261025,
+  "started_at_ms": 1792971749001,
+  "finished_at_ms": 1792971932260,
+  "rtt_us": {
+    "mean": 1203.7,
+    "min": 506,
+    "p50": 726,
+    "p90": 1640,
+    "p95": 4043,
+    "p99": 4839,
+    "p999": 4839,
+    "max": 4839
+  },
+  "load": {
+    "max_duration": "1800s",
+    "model": "closed",
+    "samples": 1000,
+    "session_ops": 100,
+    "sessions": 1,
+    "think": "0s",
+    "warmup": "60s"
+  },
+  "slo": null,
+  "steps": [
+    {
+      "index": 0,
+      "target_rate": null,
+      "duration_s": 123.142333598,
+      "valid": true,
+      "slo_met": null,
+      "generator": {
+        "cpu_mean_pct": 2.1,
+        "cpu_max_pct": 3.3,
+        "arrivals": 0,
+        "late": 0,
+        "late_pct": 0.0,
+        "max_late_us": 0,
+        "dropped": 0
+      },
+      "ops": {
+        "smtp": {
+          "count": 1000,
+          "errors": 0,
+          "error_rate": 0.0,
+          "throughput": 8.12,
+          "mean": 64346.6,
+          "min": 11456,
+          "p50": 50495,
+          "p90": 55871,
+          "p95": 59327,
+          "p99": 393983,
+          "p999": 556543,
+          "max": 1082367,
+          "histogram": "HISTFAAAATB4nC1PO04DMRD1vp0dZh3jrIyJlggFIgoUcQaUjo4jIM5BQUdDnY6aLkUKlANwCRpExQFA4gI8b+LPG7/x88zz6dPqyLnqxe1GvY9VgY/Vq1v+7hKbG3ydwwG1oGUUgVNSZ8qjmFOFN0+mOUXxIYQUo6acZj73eZpCFyahj7PQJR85cu999F2MnaVoKfR+6pOYn+SUsnWUR0UQjblTm0DUzHuhQLwot6iWvibBBKRcTkQi/dEXJYMvNRh4wY3ivjivtYR64A0ghJp/qoeJAzQ7rQCDvi1fdswLDwfACMOzRqQuN82+GlOkDeNQdsQpLRa4xabCA+asM8cl7vAMfAvWYyyxrbCu8ANc4RFb4LPGmM+vcUhcENnBir8WF8R7HOMPeBPWPsNJ6fs+xj/4aB0B",
+          "phases": {
+            "command": {
+              "count": 1000,
+              "mean": 15215.3,
+              "min": 4180,
+              "p50": 5795,
+              "p90": 6755,
+              "p95": 8035,
+              "p99": 259711,
+              "p999": 269311,
+              "max": 1036799,
+              "histogram": "HISTFAAAAYR4nC1Su00EMRCde3476/WZveMXnAQiIiKABhARIUVQA0LESFAAuoAGIKAAAipAiJyEJiiBN97bj2fsN/PGfuODh/WuGe5setLGzmL4Wb/Yxd+08HaGAdiFocNcfw+5GgdqfeB2zIwCOpmehqQXW+wbEAM8hlhtawkk2HvCQgwtmqnl9+HIak28cohVqxsPN2xdY5KXnHB44kRuYS2o4WSlFc8erheWkjNrZUam640dFNnqO5VeS0Eu7iy+456V4XuoFUVArtXHInBcIgt0ESmBecyFYoOCEZSBIaOSXC49j8JGxcKimupqQ626RymdptDCtxKUxbKpripbHLQLOjnMLZehbBzQdWpql5J5LvngAYQQiTYJLF8acuHGoamW2LWWWOwk9OtaKBhezyZp4NMnWbYaUWqdUBcUk6ZGyg7KOdElONZ1OMUtrnGuns3l3+hfaWbKV+GnGX4X+Fjga1/9euxw7/gGPlMg7zO8Im6KD7jEYcQPrXXSMmpdgc9H+AfwZRva"
+            },
+            "connect": {
+              "count": 1000,
+              "mean": 2071.1,
+              "min": 503,
+              "p50": 962,
+              "p90": 5179,
+              "p95": 7783,
+              "p99": 10479,
+              "p999": 16359,
+              "max": 20511,
+              "histogram": "HISTFAAAAnJ4nC1TS4oUQRDNfhn5qSqLoiiaRtqmaZphEBEZZjEMMgwiIq5cuXLhEWRO4EYQVy7mCm69jjdwKcwR5r3I7qquzIiMiPfiZeaz7/dLCPYttF88jSt9/t7/DrcPzfG/oCACAROSFY4Ra4scE5o/IUfODHICnRlgybicC1pAgBJhwdoAPdGNiJHBAaYE2h09sj2YFoTjGfypsrCYZpbhVQUXcjDGZK+L6rFBJE0zVPktV+vNw1okLFuNLb2GTDMISJlWzcmgkoX12WOsevMZlQAxMyPTrDmHPlZi1WpPFE1mPdMEYXr45lpdH4GY8li3t54Td6hVteMLnshXs9oUIp5JLb3U2orPo+JJS/qwf9UIkkSCya/eJYH6kMCk7PpoOyNKzp1p73wrqGfw0Oghyb8jrUn6rX1XMFmH+bRSfPYUGy6cEdVo2w6cjyKg7Z9wYJ4NHD45ZMdC59r0DRac0xwIuWORiTbzdgLp8JHFX9P/xokUVeP3K/Aet7jAnkhJcYH5W7xi9t4jBjwnlI7cKWn0zgbCFRx1lBYezoAb67yFI/8zc0eGzuJCThMGWzjfszJBBi8lmWK7APTckPDMUhO/0ZtI7Gsh+Ejr7ERng3f07CU0pBrRZVzzL8zCRemwdRxdsUu233nwwoiJTKMdeYSbAsUv2OyMGtdO1HZeRMw6PlsyEBMurL3xJbsKyTkecLAjV1O7uItTk+iqdgkvqemVzd4N1fhM84i33IlI6TesusEV8e/o3+GFt/VBO3fHmhJ1kcaLb/YgEB2CiJdqzi4It3fRi3PSzefyZMkbucYX2v9W+LnCrxX+JCL9MDwCHXQo1Q=="
+            },
+            "greeting": {
+              "count": 1000,
+              "mean": 773.2,
+              "min": 233,
+              "p50": 435,
+              "p90": 1571,
+              "p95": 2267,
+              "p99": 4215,
+              "p999": 10239,
+              "max": 26127,
+              "histogram": "HISTFAAAAeh4nDVSMY7UQBDsrWm3xx771uZkLafjhBAiQBchRIhOPIInkPIKPoAu4ANIhMREhMQkZIgv8ISrat+td2a6q6uru8d+8un23Kx8tP1X7s+Dtj+3X+3m/w78LjgC5ubOFeGoY0WNSjPGZVmm6WxaHlVM1esY8XgZw2JExDj5CGYt7nHGPK+Ajzy9UKRUmEgOhfg36vGphIgFyczwyVzVrLJ6VDdi4hujwXZgdAlGoFA7qAt2goAXNu1AdTmQmnJcbEZCuEXZA7LEspCbwyI3iqBaNR5pa1GhR4f0hBbVZlphhzGopnF1KUSMqgn4IBGV1vyU0CqpqJvgvtfz9L0TQ2HVIywCWtJ3CpV7Ok2VdhnKtuyqxxWtYdcGDVq++ZpAjxXH6FTdMHvvx8y4JK3hKZ5Rr2N1HkaZnLNXwcbvwJBDhGXFN7h0YXPqznzySjgzyY2aGy4oUFJqoN97crpsTes695XkE155jtIeZJg9qNWkW2o0XeRMkLo7yzLpgn2r1Q6v/S2QGQ0vUlbjdnjJtTLjg2/EbvDlgHeEZu5kzMS1n/IGHt5rf99kydyetnpw6Bpnetd6Fczgtqk0b2MDI+eMndSBz5m9srcTdY/42+EX8Bn4NuL7AT8KE6/wHO/J+Qf83HAHfiwf0A=="
+            },
+            "tls": {
+              "count": 1000,
+              "mean": 46256.3,
+              "min": 2160,
+              "p50": 42207,
+              "p90": 43679,
+              "p95": 44319,
+              "p99": 131583,
+              "p999": 296447,
+              "max": 303871,
+              "histogram": "HISTFAAAAMh4nC1LSxLBQBQc7RljioiISJFSY4qUXylFYaEiC0dwCBdxg6ws7GysLHMBZ3ANjmAiul5193uvOzgnTcbYk+Uo/rWQ0Su5sfiTH94KlwMJsoSAp+3ADwZahTO9mSz2S92bqKVS4SicK+3M3ND1/cB2fdfzep2O5Zhatcpt6VgeQQrijMBJSEsQSYIBJw4GSCoZobqhzDRQohYa9CgjFTjhSpiihR2OWKMGM3Wg8gsbH2OIKNu7GGOFu0BaRts0IvTNe4svx4AWkw=="
+            }
+          },
+          "items": {
+            "count": 1000,
+            "sum": 1000,
+            "min": 1,
+            "max": 1,
+            "mean": 1.0
+          }
+        },
+        "smtp.delivery": {
+          "count": 1000,
+          "errors": 0,
+          "error_rate": 0.0,
+          "throughput": 8.12,
+          "mean": 123049.2,
+          "min": 79616,
+          "p50": 85631,
+          "p90": 92671,
+          "p95": 254591,
+          "p99": 896511,
+          "p999": 3747839,
+          "max": 4206591,
+          "histogram": "HISTFAAAAS94nC1QPU5DMQxOvhg3dUNkXqNHKRUDPxKIgYGJiSMwMDAwIgYEnRg4AEgMHRh6BRYGhJgqjsAFuARCgoEdv1eS2F/i2J+/ZHQ37Tvnr9x8hH/0jfuYPrrD73lgdk0L6IIcYAuOBIHJdogi4oSjyzFLTCyckmjOWlWiUXNM29Vgc1RSycNSrw+TDFNVpFYZ1FrWDFS11jSyisKxFkmc65STqjEzZzORYp04kVBkSeIoUgSDiVo5gGkg4nZrMQSwM8GAiaY2I1oitRbMomtwAT10YM8y3zdYwR52sWP24HGEZ48LvAZ89bCFe+AEp7jBL5rYAXCOfaulYN1o0biWMcZtwBuwhDNs2Ln5sRePY+pg1eZPMDe22y6ePC6NvIfPYP0mHhPFuxF3MAv4A5WTIpY="
+        },
+        "smtp.message": {
+          "count": 1000,
+          "errors": 0,
+          "error_rate": 0.0,
+          "throughput": 8.12,
+          "mean": 15215.3,
+          "min": 4180,
+          "p50": 5795,
+          "p90": 6755,
+          "p95": 8035,
+          "p99": 259711,
+          "p999": 269311,
+          "max": 1036799,
+          "histogram": "HISTFAAAAYR4nC1Su00EMRCde3476/WZveMXnAQiIiKABhARIUVQA0LESFAAuoAGIKAAAipAiJyEJiiBN97bj2fsN/PGfuODh/WuGe5setLGzmL4Wb/Yxd+08HaGAdiFocNcfw+5GgdqfeB2zIwCOpmehqQXW+wbEAM8hlhtawkk2HvCQgwtmqnl9+HIak28cohVqxsPN2xdY5KXnHB44kRuYS2o4WSlFc8erheWkjNrZUam640dFNnqO5VeS0Eu7iy+456V4XuoFUVArtXHInBcIgt0ESmBecyFYoOCEZSBIaOSXC49j8JGxcKimupqQ626RymdptDCtxKUxbKpripbHLQLOjnMLZehbBzQdWpql5J5LvngAYQQiTYJLF8acuHGoamW2LWWWOwk9OtaKBhezyZp4NMnWbYaUWqdUBcUk6ZGyg7KOdElONZ1OMUtrnGuns3l3+hfaWbKV+GnGX4X+Fjga1/9euxw7/gGPlMg7zO8Im6KD7jEYcQPrXXSMmpdgc9H+AfwZRva",
+          "phases": {
+            "command": {
+              "count": 1000,
+              "mean": 15215.3,
+              "min": 4180,
+              "p50": 5795,
+              "p90": 6755,
+              "p95": 8035,
+              "p99": 259711,
+              "p999": 269311,
+              "max": 1036799,
+              "histogram": "HISTFAAAAYR4nC1Su00EMRCde3476/WZveMXnAQiIiKABhARIUVQA0LESFAAuoAGIKAAAipAiJyEJiiBN97bj2fsN/PGfuODh/WuGe5setLGzmL4Wb/Yxd+08HaGAdiFocNcfw+5GgdqfeB2zIwCOpmehqQXW+wbEAM8hlhtawkk2HvCQgwtmqnl9+HIak28cohVqxsPN2xdY5KXnHB44kRuYS2o4WSlFc8erheWkjNrZUam640dFNnqO5VeS0Eu7iy+456V4XuoFUVArtXHInBcIgt0ESmBecyFYoOCEZSBIaOSXC49j8JGxcKimupqQ626RymdptDCtxKUxbKpripbHLQLOjnMLZehbBzQdWpql5J5LvngAYQQiTYJLF8acuHGoamW2LWWWOwk9OtaKBhezyZp4NMnWbYaUWqdUBcUk6ZGyg7KOdElONZ1OMUtrnGuns3l3+hfaWbKV+GnGX4X+Fjga1/9euxw7/gGPlMg7zO8Im6KD7jEYcQPrXXSMmpdgc9H+AfwZRva"
+            }
+          }
+        },
+        "smtp.probe_rtt": {
+          "count": 1000,
+          "errors": 0,
+          "error_rate": 0.0,
+          "throughput": 8.12,
+          "mean": 8335.3,
+          "min": 142,
+          "p50": 185,
+          "p90": 240,
+          "p95": 720,
+          "p99": 2191,
+          "p999": 2394111,
+          "max": 3518463,
+          "histogram": "HISTFAAAARF4nC2OP0oDQRTGZ347O5mMm3WcrMka46oxLkaDYiFaae0BrAQ9g4iFZUAQK4uUtt5AxCMEL6BHsBUsLXSW5D14f77v/eB178ZNIWRPTCOadVmVj/GzOPmeCk+okBplEp2kLvMt3zJF6ru25zt51ir7R71yq7+7Njwut4uOL8ph0SnSPPO5z12W+dTb3CU+sYlz2ifOam2M1cLoyCplYgUCoQRVRAgdUyemSY394KwzYDUoEXNBmeeKZW44pR3mndDr0Ki4WsiIxUAKllRdNYNcUXHlqQYbgdsL24AzDjjkQXLNQoDa3Fb8SPIreZVscsmfDDdfMAr/cA73khU+YyYRL4rHC35y3i1vjonhH63UIMQ="
+        }
+      }
+    }
+  ],
+  "valid": true,
+  "best_step": null,
+  "best_rate": null
+}

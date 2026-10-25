@@ -1,0 +1,21 @@
+{
+  "track": "s",
+  "description": "Track S: one Stalwart node on RocksDB behind the public load balancer, clients in a remote region",
+  "regions": {
+    "main": {"location": "westus3", "ec2_region": "REGION_S", "prefix": "10.32.0.0/16", "ppg": true},
+    "clients": {"location": "westus", "ec2_region": "REGION_CL", "prefix": "10.37.0.0/16", "ppg": false}
+  },
+  "vms": [
+    {"name": "stalwart1", "role": "stalwart", "region": "main", "size": "Standard_D8ads_v7", "ec2_type": "m8ad.2xlarge", "disk": 64, "nvme": true,
+     "provision": ["os-tuning", "stalwart"]},
+    {"name": "sink", "role": "sink", "region": "main", "size": "Standard_D2as_v7", "ec2_type": "m8a.large", "disk": 64,
+     "provision": ["os-tuning", "loadgen", "dns-stub", "sink"]},
+    {"name": "load-s", "role": "load", "region": "clients", "size": "Standard_D16as_v7", "ec2_type": "c8a.4xlarge", "disk": 128,
+     "provision": ["os-tuning", "loadgen"]}
+  ],
+  "targets": {"stalwart": "lb:public"},
+  "lbs": [
+    {"name": "public", "kind": "public", "region": "main", "ports": [25, 465, 587, 993, 443], "backends": ["stalwart1"], "clients": ["load-s"]}
+  ],
+  "peerings": [["main", "clients"]]
+}

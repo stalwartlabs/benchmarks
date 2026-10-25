@@ -1,0 +1,61 @@
+compatibility_level = 3.11
+queue_directory = ${POSTFIX_QUEUE}
+data_directory = ${POSTFIX_DATA}
+mail_owner = postfix
+setgid_group = postdrop
+maillog_file = /var/log/postfix.log
+
+myhostname = ${BENCH_MAIL_HOSTNAME}
+mydomain = ${BENCH_DOMAIN}
+myorigin = $mydomain
+inet_interfaces = all
+inet_protocols = ipv4
+mydestination =
+mynetworks = 127.0.0.0/8
+local_recipient_maps =
+alias_maps =
+alias_database =
+recipient_delimiter =
+biff = no
+append_dot_mydomain = no
+smtpd_banner = $myhostname ESMTP
+
+virtual_mailbox_domains = ${BENCH_DOMAIN}
+virtual_mailbox_maps = hash:${POSTFIX_MAPS}/vmailbox
+virtual_transport = lmtp:unix:private/dovecot-lmtp
+virtual_mailbox_limit = 0
+mailbox_size_limit = 0
+message_size_limit = 104857600
+
+default_process_limit = 1000
+in_flow_delay = 0
+smtpd_client_connection_count_limit = 0
+smtpd_client_connection_rate_limit = 0
+smtpd_client_message_rate_limit = 0
+smtpd_client_recipient_rate_limit = 0
+smtpd_client_new_tls_session_rate_limit = 0
+smtpd_peername_lookup = no
+
+lmtp_destination_concurrency_limit = 25
+lmtp_initial_destination_concurrency = 25
+lmtp_destination_recipient_limit = 50
+smtp_destination_concurrency_limit = 50
+smtp_initial_destination_concurrency = 50
+
+smtpd_relay_restrictions = permit_mynetworks, permit_sasl_authenticated, defer_unauth_destination
+smtpd_sasl_type = dovecot
+smtpd_sasl_path = private/auth
+smtpd_sasl_auth_enable = no
+smtpd_sender_login_maps = regexp:/etc/postfix/sender_login.regexp
+
+tls_config_file = /etc/postfix/openssl.cnf
+tls_config_name = postfix
+smtpd_tls_chain_files = ${TLS_KEY}, ${TLS_CERT}
+smtpd_tls_security_level = may
+smtpd_tls_protocols = >=TLSv1.3
+smtpd_tls_mandatory_protocols = >=TLSv1.3
+smtpd_tls_session_cache_database = btree:${data_directory}/smtpd_scache
+smtpd_tls_loglevel = 0
+smtp_tls_security_level = may
+smtp_tls_session_cache_database = btree:${data_directory}/smtp_scache
+smtp_tls_loglevel = 0

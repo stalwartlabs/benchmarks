@@ -1,0 +1,85 @@
+{
+  "schema": "mailbench/1",
+  "scenario": "c16",
+  "cell": "c16-sessions16-64k",
+  "family": "imap",
+  "mode": "latency",
+  "target": "dovecot",
+  "variant": "fsync-always",
+  "profile": "c-reduced",
+  "hosts": [
+    "load1"
+  ],
+  "shards": [
+    "0/1"
+  ],
+  "dataset": "c",
+  "seed": 20261025,
+  "started_at_ms": 1792983898001,
+  "finished_at_ms": 1792983965088,
+  "rtt_us": {
+    "mean": 2419.0,
+    "min": 509,
+    "p50": 1004,
+    "p90": 6379,
+    "p95": 6567,
+    "p99": 11863,
+    "p999": 11863,
+    "max": 11863
+  },
+  "load": {
+    "max_duration": "1800s",
+    "model": "closed",
+    "samples": 10000,
+    "session_ops": 100,
+    "sessions": 16,
+    "think": "0s",
+    "warmup": "60s"
+  },
+  "slo": null,
+  "steps": [
+    {
+      "index": 0,
+      "target_rate": null,
+      "duration_s": 7.086338904,
+      "valid": true,
+      "slo_met": null,
+      "generator": {
+        "cpu_mean_pct": 0.3,
+        "cpu_max_pct": 0.4,
+        "arrivals": 0,
+        "late": 0,
+        "late_pct": 0.0,
+        "max_late_us": 0,
+        "dropped": 0
+      },
+      "ops": {
+        "imap.append": {
+          "count": 10015,
+          "errors": 0,
+          "error_rate": 0.0,
+          "throughput": 1413.28,
+          "mean": 9818.7,
+          "min": 1153,
+          "p50": 9231,
+          "p90": 16039,
+          "p95": 18479,
+          "p99": 24303,
+          "p999": 31631,
+          "max": 37887,
+          "histogram": "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",
+          "items": {
+            "count": 10015,
+            "sum": 656593415,
+            "min": 65561,
+            "max": 65561,
+            "mean": 65561.0
+          }
+        }
+      }
+    }
+  ],
+  "valid": true,
+  "best_step": null,
+  "best_rate": null
+}

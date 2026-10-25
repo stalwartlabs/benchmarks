@@ -1,0 +1,84 @@
+{
+  "schema": "mailbench/1",
+  "scenario": "c12-thread",
+  "cell": "c12-thread-sessions1",
+  "family": "imap",
+  "mode": "latency",
+  "target": "stalwart",
+  "profile": "c-reduced",
+  "hosts": [
+    "load1"
+  ],
+  "shards": [
+    "0/1"
+  ],
+  "dataset": "c",
+  "seed": 20261025,
+  "started_at_ms": 1792984840001,
+  "finished_at_ms": 1792984901927,
+  "rtt_us": {
+    "mean": 4608.6,
+    "min": 686,
+    "p50": 2679,
+    "p90": 9679,
+    "p95": 11055,
+    "p99": 17647,
+    "p999": 17647,
+    "max": 17647
+  },
+  "load": {
+    "max_duration": "1800s",
+    "model": "closed",
+    "samples": 10000,
+    "session_ops": 100,
+    "sessions": 1,
+    "think": "0s",
+    "warmup": "60s"
+  },
+  "slo": null,
+  "steps": [
+    {
+      "index": 0,
+      "target_rate": null,
+      "duration_s": 1.925833506,
+      "valid": true,
+      "slo_met": null,
+      "generator": {
+        "cpu_mean_pct": 0.5,
+        "cpu_max_pct": 0.5,
+        "arrivals": 0,
+        "late": 0,
+        "late_pct": 0.0,
+        "max_late_us": 0,
+        "dropped": 0
+      },
+      "ops": {
+        "imap.thread": {
+          "count": 10000,
+          "errors": 0,
+          "error_rate": 0.0,
+          "throughput": 5192.56,
+          "mean": 117.0,
+          "min": 82,
+          "p50": 95,
+          "p90": 154,
+          "p95": 275,
+          "p99": 493,
+          "p999": 525,
+          "max": 3401,
+          "histogram": "HISTFAAAAS14nC2OP0sDQRDFd9/NDcu6rMd5HnocZwjBIoiCIIiE+AcLCQEbixBCPoKkDiIWIlYily8Q1MJKglpZW1gKSj6FhWUqcY9kiplheO/3Jr0cLAghq2Ja3mzKoo0HD2L3d3q4l7aV407l9mrux3/y3zj3H+mTJ/6QX2lEH3j3xt43bjDCn7zARD7Loex0uu1Gt3d0ctbfrkYmaV3L5matc34r+6ftVr+3sxYnjWYpslqTUtHhQchaM5QAKRJ6vVbfS8uJUazYkM3qpdhtDFZRVikHoTVgCCr0HiDgA/M4ZjY2XK1Ul2JLOoyjgCh0FoJgArGT0TI84tikacDaKk2GyDGADXxJQNss0cqqwEYmNFoxyD3kchw5yNKCgkItiDyiIta5trCIfbys4B8/Ri+k",
+          "items": {
+            "count": 10000,
+            "sum": 4889600,
+            "min": 100,
+            "max": 5091,
+            "mean": 488.96
+          }
+        }
+      }
+    }
+  ],
+  "valid": true,
+  "best_step": null,
+  "best_rate": null
+}

@@ -1,0 +1,33 @@
+{"@type":"upsert","object":"Certificate","matchOn":["certificate"],"value":{"cert":{"certificate":{"@type":"File","filePath":"/etc/stalwart/tls/cert.pem"},"privateKey":{"@type":"File","filePath":"/etc/stalwart/tls/key.pem"}}}}
+{"@type":"upsert","object":"Domain","matchOn":["name"],"value":{"dom":{"name":"example.org","certificateManagement":{"@type":"Manual"},"dkimManagement":{"@type":"Manual"},"dnsManagement":{"@type":"Manual"},"subAddressing":{"@type":"Disabled"}}}}
+{"@type":"update","object":"SystemSettings","value":{"defaultHostname":"mail.example.org","defaultDomainId":"#dom","defaultCertificateId":"#cert"}}
+{"@type":"upsert","object":"Account","matchOn":["name"],"value":{"admin":{"@type":"User","name":"admin","domainId":"#dom","roles":{"@type":"Admin"},"credentials":{"0":{"@type":"Password","secret":"<sha512-crypt hash>"}}}}}
+{"@type":"reconcile","object":"NetworkListener","matchOn":["name"],"value":{"smtp":{"name":"smtp","protocol":"smtp","bind":{"[::]:25":true},"useTls":true,"implicitTls":false,"tlsDisableProtocols":{"tls12":true},"tlsDisableCipherSuites":{"tls13-aes-128-gcm-sha256":true,"tls13-chacha20-poly1305-sha256":true}},"submission":{"name":"submission","protocol":"smtp","bind":{"[::]:587":true},"useTls":true,"implicitTls":false,"tlsDisableProtocols":{"tls12":true},"tlsDisableCipherSuites":{"tls13-aes-128-gcm-sha256":true,"tls13-chacha20-poly1305-sha256":true}},"submissions":{"name":"submissions","protocol":"smtp","bind":{"[::]:465":true},"useTls":true,"implicitTls":true,"tlsDisableProtocols":{"tls12":true},"tlsDisableCipherSuites":{"tls13-aes-128-gcm-sha256":true,"tls13-chacha20-poly1305-sha256":true}},"imaps":{"name":"imaps","protocol":"imap","bind":{"[::]:993":true},"useTls":true,"implicitTls":true,"tlsDisableProtocols":{"tls12":true},"tlsDisableCipherSuites":{"tls13-aes-128-gcm-sha256":true,"tls13-chacha20-poly1305-sha256":true}},"https":{"name":"https","protocol":"http","bind":{"[::]:443":true},"useTls":true,"implicitTls":true,"tlsDisableProtocols":{"tls12":true},"tlsDisableCipherSuites":{"tls13-aes-128-gcm-sha256":true,"tls13-chacha20-poly1305-sha256":true}}}}
+{"@type":"reconcile","object":"MtaInboundThrottle","matchOn":["description"],"value":{"thr-ip":{"description":"Sender IP throttle","enable":false,"key":{"remoteIp":true},"rate":{"count":5,"period":1000}},"thr-rcpt":{"description":"Sender address to recipient throttle","enable":false,"key":{"senderDomain":true,"rcpt":true},"rate":{"count":25,"period":3600000}}}}
+{"@type":"reconcile","object":"MtaOutboundThrottle","matchOn":["description"],"value":{}}
+{"@type":"reconcile","object":"MtaQueueQuota","matchOn":["description"],"value":{"quota":{"description":"Global queue quota","enable":false,"messages":100000,"size":10737418240}}}
+{"@type":"upsert","object":"MtaTlsStrategy","matchOn":["name"],"value":{"tls-default":{"name":"default","allowInvalidCerts":true,"dane":"disable","mtaSts":"disable","startTls":"optional"},"tls-invalid":{"name":"invalid-tls","allowInvalidCerts":true,"dane":"disable","mtaSts":"disable","startTls":"optional"}}}
+{"@type":"reconcile","object":"Tracer","matchOn":["prefix"],"value":{"log":{"@type":"Log","enable":true,"level":"info","path":"/var/log/stalwart","prefix":"stalwart.log","rotate":"daily","ansi":false,"multiline":false,"lossy":false}}}
+{"@type":"update","object":"BlobStore","value":{"@type":"Default"}}
+{"@type":"update","object":"SearchStore","value":{"@type":"Default"}}
+{"@type":"update","object":"InMemoryStore","value":{"@type":"Default"}}
+{"@type":"update","object":"TracingStore","value":{"@type":"Default"}}
+{"@type":"update","object":"TracingStore","value":{"@type":"Disabled"}}
+{"@type":"update","object":"MetricsStore","value":{"@type":"Default"}}
+{"@type":"update","object":"MetricsStore","value":{"@type":"Disabled"}}
+{"@type":"update","object":"Metrics","value":{"prometheus":{"@type":"Disabled"},"openTelemetry":{"@type":"Disabled"}}}
+{"@type":"update","object":"Asn","value":{"@type":"Resource","asnUrls":{},"geoUrls":{}}}
+{"@type":"update","object":"Asn","value":{"@type":"Disabled"}}
+{"@type":"update","object":"SpamSettings","value":{"enable":false,"spamFilterRulesUrl":null,"greylistFor":null}}
+{"@type":"update","object":"SenderAuth","value":{"dkimVerify":{"else":"disable","match":{}},"arcVerify":{"else":"disable","match":{}},"spfEhloVerify":{"else":"disable","match":{}},"spfFromVerify":{"else":"disable","match":{}},"dmarcVerify":{"else":"disable","match":{}},"reverseIpVerify":{"else":"disable","match":{}}}}
+{"@type":"update","object":"MtaStageEhlo","value":{"rejectNonFqdn":{"else":"false","match":{}}}}
+{"@type":"update","object":"MtaStageMail","value":{"isSenderAllowed":{"else":"true","match":{}}}}
+{"@type":"update","object":"MtaStageData","value":{"enableSpamFilter":{"else":"false","match":{}},"dkimSignDomain":{"else":"false","match":{}},"addAuthResultsHeader":{"else":"false","match":{}},"addReceivedSpfHeader":{"else":"false","match":{}}}}
+{"@type":"update","object":"Security","value":{"authBanRate":null,"abuseBanRate":null,"loiterBanRate":null,"scanBanRate":null,"scanBanPaths":{}}}
+{"@type":"update","object":"Imap","value":{"rateLimit":null,"maxConcurrentConnections":null}}
+{"@type":"update","object":"Http","value":{"rateLimitAnonymous":null,"rateLimitAuthenticated":null}}
+{"@type":"update","object":"CalendarScheduling","value":{"enable":false,"httpRsvpEnable":false}}
+{"@type":"update","object":"Search","value":{"indexEmailFields":{"from":true,"to":true,"cc":true,"bcc":true,"subject":true,"body":true},"indexTelemetry":false}}
+{"@type":"update","object":"Email","value":{"defaultFolders":{"inbox":{"name":"Inbox","create":true,"subscribe":true},"drafts":{"name":"Drafts","create":true,"subscribe":true},"sent":{"name":"Sent","create":true,"subscribe":true},"archive":{"name":"Archive","create":true,"subscribe":true},"junk":{"name":"Junk","create":true,"subscribe":true},"trash":{"name":"Trash","create":true,"subscribe":true}}}}
+{"@type":"upsert","object":"AllowedIp","matchOn":["address"],"value":{"ip-load1":{"address":"10.10.0.4","reason":"bench load host load1"}}}
+{"@type":"upsert","object":"AllowedIp","matchOn":["address"],"value":{"ip-load2":{"address":"10.10.0.8","reason":"bench load host load2"}}}

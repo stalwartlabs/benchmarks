@@ -1,0 +1,297 @@
+{
+  "track": "s2",
+  "description": "Stage 2 VM smoke test: every stage 2 role once (pg x3, redis x2 plus 3 sentinels, fdb x3, garage x3, ceph x3, stalwart x2) on the smallest Zen 5 sizes in one region, 36 vCPU",
+  "regions": {
+    "main": {
+      "location": "REGION_S2",
+      "ec2_region": "REGION_S2",
+      "prefix": "10.41.0.0/16",
+      "ppg": true
+    }
+  },
+  "vms": [
+    {
+      "name": "sink",
+      "role": "sink",
+      "region": "main",
+      "size": "Standard_D2as_v7",
+      "ec2_type": "m8a.large",
+      "disk": 64,
+      "provision": [
+        "os-tuning",
+        "loadgen",
+        "dns-stub",
+        "sink"
+      ]
+    },
+    {
+      "name": "stalwart1",
+      "role": "stalwart",
+      "region": "main",
+      "size": "Standard_D2as_v7",
+      "ec2_type": "m8a.large",
+      "disk": 64,
+      "provision": [
+        "os-tuning",
+        "fdb-client",
+        "sentinel",
+        "stalwart"
+      ]
+    },
+    {
+      "name": "stalwart2",
+      "role": "stalwart",
+      "region": "main",
+      "size": "Standard_D2as_v7",
+      "ec2_type": "m8a.large",
+      "disk": 64,
+      "provision": [
+        "os-tuning",
+        "fdb-client",
+        "sentinel",
+        "stalwart"
+      ]
+    },
+    {
+      "name": "pg1",
+      "role": "postgres-primary",
+      "region": "main",
+      "size": "Standard_D2ads_v7",
+      "ec2_type": "m8ad.large",
+      "disk": 64,
+      "nvme": true,
+      "provision": [
+        "os-tuning",
+        "postgres"
+      ]
+    },
+    {
+      "name": "pg2",
+      "role": "postgres-standby",
+      "region": "main",
+      "size": "Standard_D2ads_v7",
+      "ec2_type": "m8ad.large",
+      "disk": 64,
+      "nvme": true,
+      "provision": [
+        "os-tuning",
+        "postgres"
+      ]
+    },
+    {
+      "name": "pg3",
+      "role": "postgres-standby",
+      "region": "main",
+      "size": "Standard_D2ads_v7",
+      "ec2_type": "m8ad.large",
+      "disk": 64,
+      "nvme": true,
+      "provision": [
+        "os-tuning",
+        "postgres"
+      ]
+    },
+    {
+      "name": "redis1",
+      "role": "redis",
+      "region": "main",
+      "size": "Standard_D2as_v7",
+      "ec2_type": "m8a.large",
+      "disk": 64,
+      "provision": [
+        "os-tuning",
+        "redis",
+        "sentinel"
+      ]
+    },
+    {
+      "name": "redis2",
+      "role": "redis",
+      "region": "main",
+      "size": "Standard_D2as_v7",
+      "ec2_type": "m8a.large",
+      "disk": 64,
+      "provision": [
+        "os-tuning",
+        "redis"
+      ]
+    },
+    {
+      "name": "fdb1",
+      "role": "fdb",
+      "region": "main",
+      "size": "Standard_D2ads_v7",
+      "ec2_type": "m8ad.large",
+      "disk": 64,
+      "nvme": true,
+      "provision": [
+        "os-tuning",
+        "fdb"
+      ]
+    },
+    {
+      "name": "fdb2",
+      "role": "fdb",
+      "region": "main",
+      "size": "Standard_D2ads_v7",
+      "ec2_type": "m8ad.large",
+      "disk": 64,
+      "nvme": true,
+      "provision": [
+        "os-tuning",
+        "fdb"
+      ]
+    },
+    {
+      "name": "fdb3",
+      "role": "fdb",
+      "region": "main",
+      "size": "Standard_D2ads_v7",
+      "ec2_type": "m8ad.large",
+      "disk": 64,
+      "nvme": true,
+      "provision": [
+        "os-tuning",
+        "fdb"
+      ]
+    },
+    {
+      "name": "garage1",
+      "role": "garage",
+      "region": "main",
+      "size": "Standard_D2ads_v7",
+      "ec2_type": "m8ad.large",
+      "disk": 64,
+      "nvme": true,
+      "provision": [
+        "os-tuning",
+        "garage"
+      ]
+    },
+    {
+      "name": "garage2",
+      "role": "garage",
+      "region": "main",
+      "size": "Standard_D2ads_v7",
+      "ec2_type": "m8ad.large",
+      "disk": 64,
+      "nvme": true,
+      "provision": [
+        "os-tuning",
+        "garage"
+      ]
+    },
+    {
+      "name": "garage3",
+      "role": "garage",
+      "region": "main",
+      "size": "Standard_D2ads_v7",
+      "ec2_type": "m8ad.large",
+      "disk": 64,
+      "nvme": true,
+      "provision": [
+        "os-tuning",
+        "garage"
+      ]
+    },
+    {
+      "name": "ceph1",
+      "role": "ceph",
+      "region": "main",
+      "size": "Standard_D2ads_v7",
+      "ec2_type": "m8ad.large",
+      "disk": 64,
+      "provision": [
+        "os-tuning",
+        "ceph"
+      ]
+    },
+    {
+      "name": "ceph2",
+      "role": "ceph",
+      "region": "main",
+      "size": "Standard_D2ads_v7",
+      "ec2_type": "m8ad.large",
+      "disk": 64,
+      "provision": [
+        "os-tuning",
+        "ceph"
+      ]
+    },
+    {
+      "name": "ceph3",
+      "role": "ceph",
+      "region": "main",
+      "size": "Standard_D2ads_v7",
+      "ec2_type": "m8ad.large",
+      "disk": 64,
+      "provision": [
+        "os-tuning",
+        "ceph"
+      ]
+    },
+    {
+      "name": "load-s2",
+      "role": "load",
+      "region": "main",
+      "size": "Standard_D2as_v7",
+      "ec2_type": "m8a.large",
+      "disk": 64,
+      "provision": [
+        "os-tuning",
+        "loadgen"
+      ]
+    }
+  ],
+  "targets": {
+    "stalwart": "lb:public"
+  },
+  "lbs": [
+    {
+      "name": "public",
+      "kind": "public",
+      "region": "main",
+      "ports": [
+        25,
+        465,
+        587,
+        993,
+        443
+      ],
+      "backends": [
+        "stalwart1",
+        "stalwart2"
+      ],
+      "clients": [
+        "load-s2"
+      ]
+    },
+    {
+      "name": "s3-garage",
+      "kind": "internal",
+      "region": "main",
+      "ports": [
+        3900
+      ],
+      "backends": [
+        "garage1",
+        "garage2",
+        "garage3"
+      ]
+    },
+    {
+      "name": "s3-ceph",
+      "kind": "internal",
+      "region": "main",
+      "ports": [
+        80
+      ],
+      "backends": [
+        "ceph1",
+        "ceph2",
+        "ceph3"
+      ]
+    }
+  ],
+  "peerings": []
+}

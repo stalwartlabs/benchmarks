@@ -1,0 +1,110 @@
+[
+  {
+    "id": "c01-sessions1-recipients1-4k",
+    "scenario": "c01",
+    "file": "scenarios/c/c01-smtp-in.yaml",
+    "title": "SMTP inbound: connect to 250 after DATA, port 25 STARTTLS, one message per connection",
+    "family": "smtp-in",
+    "mode": "latency",
+    "targets": [
+      "stalwart",
+      "dovecot"
+    ],
+    "variants": [],
+    "cache": "warm",
+    "load_hosts": 1,
+    "repetitions": 3,
+    "dataset": "c",
+    "group": "qa-c4b"
+  },
+  {
+    "id": "c01-sessions16-recipients1-4k",
+    "scenario": "c01",
+    "file": "scenarios/c/c01-smtp-in.yaml",
+    "title": "SMTP inbound: connect to 250 after DATA, port 25 STARTTLS, one message per connection",
+    "family": "smtp-in",
+    "mode": "latency",
+    "targets": [
+      "stalwart",
+      "dovecot"
+    ],
+    "variants": [],
+    "cache": "warm",
+    "load_hosts": 1,
+    "repetitions": 3,
+    "dataset": "c",
+    "group": "qa-c4"
+  },
+  {
+    "id": "c01-sessions16-recipients10-mix",
+    "scenario": "c01",
+    "file": "scenarios/c/c01-smtp-in.yaml",
+    "title": "SMTP inbound: connect to 250 after DATA, port 25 STARTTLS, one message per connection",
+    "family": "smtp-in",
+    "mode": "latency",
+    "targets": [
+      "stalwart",
+      "dovecot"
+    ],
+    "variants": [],
+    "cache": "warm",
+    "load_hosts": 1,
+    "repetitions": 3,
+    "dataset": "c",
+    "group": "qa-c4"
+  },
+  {
+    "id": "c02-idle-sessions1-recipients1-4k",
+    "scenario": "c02-idle",
+    "file": "scenarios/c/c02-smtp-delivery-idle.yaml",
+    "title": "SMTP inbound: connect to message visible in the recipient INBOX (IMAP IDLE probe: push notification latency, includes the server notification delay)",
+    "family": "smtp-in",
+    "mode": "latency",
+    "targets": [
+      "stalwart",
+      "dovecot"
+    ],
+    "variants": [],
+    "cache": "warm",
+    "load_hosts": 1,
+    "repetitions": 1,
+    "dataset": "c",
+    "group": "qa-c4"
+  },
+  {
+    "id": "c02-sessions1-recipients1-4k",
+    "scenario": "c02",
+    "file": "scenarios/c/c02-smtp-delivery.yaml",
+    "title": "SMTP inbound: connect to message visible in the recipient INBOX (probe polls NOOP every 1 ms on the recipient INBOX while a message is in flight)",
+    "family": "smtp-in",
+    "mode": "latency",
+    "targets": [
+      "stalwart",
+      "dovecot"
+    ],
+    "variants": [],
+    "cache": "warm",
+    "load_hosts": 1,
+    "repetitions": 3,
+    "dataset": "c",
+    "group": "qa-c4b"
+  },
+  {
+    "id": "c02-sessions16-recipients10-mix",
+    "scenario": "c02",
+    "file": "scenarios/c/c02-smtp-delivery.yaml",
+    "title": "SMTP inbound: connect to message visible in the recipient INBOX (probe polls NOOP every 1 ms on the recipient INBOX while a message is in flight)",
+    "family": "smtp-in",
+    "mode": "latency",
+    "targets": [
+      "stalwart",
+      "dovecot"
+    ],
+    "variants": [],
+    "cache": "warm",
+    "load_hosts": 1,
+    "repetitions": 3,
+    "dataset": "c",
+    "group": "qa-c4"
+  }
+]

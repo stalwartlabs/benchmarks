@@ -1,0 +1,20 @@
+id: c06
+title: "SMTP relay sustained throughput (open loop, corpus mix)"
+family: smtp-relay
+mode: throughput
+targets: [stalwart, dovecot]
+repetitions: 3
+cache: warm
+load_hosts: all
+dataset: c
+timeout: 30s
+slo: {p99: 1s, max_error_rate: 0.001, labels: [smtp]}
+load:
+  model: open
+  ladder: {start: 25, factor: 1.4, steps: 16}
+  warmup: 60s
+  step_warmup: 10s
+  step_duration: 60s
+  stop_after_failures: 2
+users: {set: regular}
+op: {kind: smtp, port: submission, recipients: 1, size: mix, relay: true}

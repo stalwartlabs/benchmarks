@@ -1,0 +1,19 @@
+[Unit]
+Description=Postfix Mail Transport Agent
+After=network-online.target dovecot.service
+Wants=network-online.target
+Conflicts=stalwart.service sendmail.service exim4.service
+
+[Service]
+Type=forking
+PIDFile=${POSTFIX_QUEUE}/pid/master.pid
+LimitNOFILE=1048576
+ExecStartPre=/usr/sbin/postfix check
+ExecStart=/usr/sbin/postfix start
+ExecReload=/usr/sbin/postfix reload
+ExecStop=/usr/sbin/postfix stop
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

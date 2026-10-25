@@ -1,0 +1,56 @@
+# c11 c03-mpc10/dovecot/rep1: smtp error breakdown (w1, 2026-10-26T03:39:50Z)
+window 03:03:56Z - 03:21:26Z (UTC clock of the cluster), Postfix on c11 dovecot host
+
+## mailbench error kinds (merged.json)
+step 13: target_rate 793.72/s total, smtp errors 39 of 23666, slo_met true, valid true
+cells/c03-mpc10/dovecot/rep1 step 13 rate 793.72/s: smtp=39/23705 (timeout:39) | timed out after 60s
+per host:
+load1: [{"step":13,"errors":16}]
+load2: [{"step":13,"errors":23}]
+
+## Postfix / Dovecot log lines on the dovecot host in the window
+13
+-- counts
+-- postfix limit / refusal lines
+-- master.cf smtpd maxproc / default_process_limit
+default_process_limit = 1000
+smtpd_client_connection_count_limit = 0
+smtp       inet  n       -       n       -       -       smtpd
+
+## Postfix maillog (window)
+maillog_file=/var/log/postfix.log
+-rw-r--r-- 1 root root 674423802 Oct 26 03:33 /var/log/postfix.log
+-- postfix.log sample format
+Oct 26 02:00:54 mail postfix/master[10950]: daemon started -- version 3.11.7, configuration /etc/postfix
+-- warning/fatal/panic lines by kind (whole file, normalized)
+      3 N:N:N mail postfix/qmgr[N]: warning: to turn off these warnings specify: qmgr_clog_warn_time = N
+      3 N:N:N mail postfix/qmgr[N]: warning: please avoid flushing the whole queue when you have
+      3 N:N:N mail postfix/qmgr[N]: warning: mail for unix:private/dovecot-lmtp is using up N of N active queue entries
+      3 N:N:N mail postfix/qmgr[N]: warning: lots of deferred mail, that is bad for performance
+      2 N:N:N mail postfix/qmgr[N]: warning: you may need to increase the main.cf lmtp_destination_concurrency_limit from N
+      1 N:N:N mail postfix/qmgr[N]: warning: you may need to reduce lmtp connect and helo timeouts
+      1 N:N:N mail postfix/qmgr[N]: warning: you may need to increase the master.cf lmtp process limit
+      1 N:N:N mail postfix/qmgr[N]: warning: you may need to increase the main.cf minimal_backoff_time and maximal_backoff_time
+      1 N:N:N mail postfix/qmgr[N]: warning: so that Postfix wastes less time on undeliverable mail
+      1 N:N:N mail postfix/qmgr[N]: warning: so that Postfix quickly skips unavailable hosts
+      1 N:N:N mail postfix/master[N]: warning: to avoid this condition, increase the process count in master.cf or reduce the service time per client
+      1 N:N:N mail postfix/master[N]: warning: service "smtp" (N) has reached its process limit "N": new clients may experience noticeable delays
+-- 03:0x-03:2x lines containing warning:
+0
+
+## Postfix queue and deferral reasons on the dovecot hosts at 2026-10-26T03:50:30Z (w1; runs are in a quiet-window wait)
+== c9 03:50:19
+queue: Mail queue is empty
+deferred: 0
+status=deferred reasons (all postfix.log*):
+      2 Host or domain name not found. Name service error for name=mx.example.net type=A: Host not found, try again
+      2 Host or domain name not found. Name service error for name=example.net type=MX: Host not found, try again
+== c10 03:50:20
+queue: Mail queue is empty
+deferred: 0
+status=deferred reasons (all postfix.log*):
+== c11 03:50:21
+queue: Mail queue is empty
+deferred: 0
+status=deferred reasons (all postfix.log*):
+     24 host mail.example.org[private/dovecot-lmtp] said: N N.N.N <userN@example.org> Too many concurrent deliveries for user (i

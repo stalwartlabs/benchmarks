@@ -1,0 +1,84 @@
+{
+  "schema": "mailbench/1",
+  "scenario": "c09",
+  "cell": "c09-sessions1-qresync_changes100",
+  "family": "imap",
+  "mode": "latency",
+  "target": "stalwart",
+  "profile": "c-reduced",
+  "hosts": [
+    "load1"
+  ],
+  "shards": [
+    "0/1"
+  ],
+  "dataset": "c",
+  "seed": 20261025,
+  "started_at_ms": 1793021484507,
+  "finished_at_ms": 1793021549753,
+  "rtt_us": {
+    "mean": 1254.3,
+    "min": 559,
+    "p50": 662,
+    "p90": 2909,
+    "p95": 3447,
+    "p99": 6143,
+    "p999": 6143,
+    "max": 6143
+  },
+  "load": {
+    "max_duration": "1800s",
+    "model": "closed",
+    "samples": 10000,
+    "session_ops": 100,
+    "sessions": 1,
+    "think": "0s",
+    "warmup": "60s"
+  },
+  "slo": null,
+  "steps": [
+    {
+      "index": 0,
+      "target_rate": null,
+      "duration_s": 5.24562283,
+      "valid": true,
+      "slo_met": null,
+      "generator": {
+        "cpu_mean_pct": 0.7,
+        "cpu_max_pct": 0.8,
+        "arrivals": 0,
+        "late": 0,
+        "late_pct": 0.0,
+        "max_late_us": 0,
+        "dropped": 0
+      },
+      "ops": {
+        "imap.select_qresync": {
+          "count": 10000,
+          "errors": 0,
+          "error_rate": 0.0,
+          "throughput": 1906.35,
+          "mean": 134.2,
+          "min": 67,
+          "p50": 135,
+          "p90": 147,
+          "p95": 152,
+          "p99": 175,
+          "p999": 209,
+          "max": 381,
+          "histogram": "HISTFAAAAN54nC2NvWoCURCFZ+bOzo43QRa8pFgWsQgSQopUCVgkIaTII4jlFoE8gG+grY1WImJhJSKWIhZWVhYi4iOIpYiVlevPKc4HHwdOVKlnAGAC15gb8Vzrehc+d1dRxSCMwpyLgse379JL6fUjn3eOVZStsCUG9pXEEJ9N8PzzF8dNHOAM5zilLvXN3qx44W2kraPUKjXSgx516y9k5y25x2MzNA3TSpZr7GAba1iMf4uFr8JTLpuN3MN96Fw6LYFYdaI2CVlIjpmEhFmAGehSRD55Ce/onf+pTBk6AefLKCw=",
+          "items": {
+            "count": 10000,
+            "sum": 740717,
+            "min": 0,
+            "max": 100,
+            "mean": 74.0717
+          }
+        }
+      }
+    }
+  ],
+  "valid": true,
+  "best_step": null,
+  "best_rate": null
+}

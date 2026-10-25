@@ -1,0 +1,92 @@
+{
+  "schema": "mailbench/1",
+  "scenario": "l14-copy-move",
+  "cell": "l14-copy-move-large10k-copy-one",
+  "family": "imap-large",
+  "mode": "latency",
+  "target": "dovecot",
+  "profile": "c-reduced",
+  "hosts": [
+    "load1"
+  ],
+  "shards": [
+    "0/1"
+  ],
+  "dataset": "c",
+  "seed": 20261025,
+  "started_at_ms": 1792977690001,
+  "finished_at_ms": 1792977721426,
+  "rtt_us": {
+    "mean": 4355.1,
+    "min": 683,
+    "p50": 2421,
+    "p90": 11311,
+    "p95": 17615,
+    "p99": 19151,
+    "p999": 19151,
+    "max": 19151
+  },
+  "load": {
+    "max_duration": "1200s",
+    "model": "closed",
+    "samples": 200,
+    "session_ops": 1000,
+    "sessions": 1,
+    "think": "0s",
+    "warmup": "30s"
+  },
+  "slo": null,
+  "steps": [
+    {
+      "index": 0,
+      "target_rate": null,
+      "duration_s": 1.425679718,
+      "valid": true,
+      "slo_met": null,
+      "generator": {
+        "cpu_mean_pct": 0.0,
+        "cpu_max_pct": 0.1,
+        "arrivals": 0,
+        "late": 0,
+        "late_pct": 0.0,
+        "max_late_us": 0,
+        "dropped": 0
+      },
+      "ops": {
+        "imap.copy": {
+          "count": 200,
+          "errors": 3,
+          "error_rate": 0.014778325123152709,
+          "throughput": 140.28,
+          "mean": 433.8,
+          "min": 344,
+          "p50": 377,
+          "p90": 440,
+          "p95": 832,
+          "p99": 1692,
+          "p999": 1853,
+          "max": 1853,
+          "histogram": "HISTFAAAAIh4nC2KMQ4BURRF3z/z5s43vmlERyEWoFSKFViLDajsYEolvSXYhU2IRK/xZNzi3puTMz/1UzM72pDqv+lXj/5q2/cAbrUDsuzKcoo8t1md49aqzcW9dDmHk5G7CgpbYZpcNUbFSFEmxkxgTRNnGeSZmHEI40yQFR/YcE8suDTs2PNKfAFJBA5Q",
+          "items": {
+            "count": 200,
+            "sum": 200,
+            "min": 1,
+            "max": 1,
+            "mean": 1.0
+          },
+          "error_kinds": {
+            "rejected": 3
+          },
+          "error_samples": [
+            "DELETE rejected: A309 NO New mails were added to mailbox during deletion (0.195 + 0.000 + 0.194 secs).",
+            "DELETE rejected: A574 NO New mails were added to mailbox during deletion (0.192 + 0.000 + 0.191 secs).",
+            "DELETE rejected: A89 NO New mails were added to mailbox during deletion (0.188 + 0.000 + 0.187 secs)."
+          ]
+        }
+      }
+    }
+  ],
+  "valid": true,
+  "best_step": null,
+  "best_rate": null
+}

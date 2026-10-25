@@ -1,0 +1,16 @@
+id: c09
+title: "IMAP SELECT INBOX, and SELECT with QRESYNC after 100 flag changes"
+family: imap
+mode: latency
+targets: [stalwart, dovecot]
+variants: [{target: dovecot, name: fsync-always}]
+repetitions: 3
+cache: warm
+load_hosts: 1
+dataset: c
+load: {model: closed, sessions: 1, warmup: 60s, samples: 10000, max_duration: 30m}
+users: {set: regular, min_inbox: 100}
+op: {kind: imap-select, folder: INBOX, qresync_changes: 0}
+matrix:
+  load.sessions: [1, 16]
+  op.qresync_changes: [0, 100]

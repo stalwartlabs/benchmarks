@@ -1,0 +1,16 @@
+id: c05
+title: "SMTP relay: connect to message accepted by the sink MTA"
+family: smtp-relay
+mode: latency
+targets: [stalwart, dovecot]
+repetitions: 3
+cache: warm
+load_hosts: 1
+dataset: c
+timeout: 60s
+load: {model: closed, sessions: 1, warmup: 60s, samples: 10000, max_duration: 30m}
+users: {set: regular}
+op: {kind: smtp, port: submission, recipients: 1, size: 4k, relay: true, probe: sink}
+matrix:
+  load.sessions: [1, 16]
+  op.size: [4k, 64k, mix]

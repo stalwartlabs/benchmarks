@@ -1,0 +1,84 @@
+{
+  "schema": "mailbench/1",
+  "scenario": "l11-search-text-multi",
+  "cell": "l11-search-text-multi-large10k",
+  "family": "imap-large",
+  "mode": "latency",
+  "target": "dovecot",
+  "profile": "c-reduced",
+  "hosts": [
+    "load1"
+  ],
+  "shards": [
+    "0/1"
+  ],
+  "dataset": "c",
+  "seed": 20261025,
+  "started_at_ms": 1792986300001,
+  "finished_at_ms": 1792986330414,
+  "rtt_us": {
+    "mean": 4295.0,
+    "min": 706,
+    "p50": 3347,
+    "p90": 8051,
+    "p95": 8091,
+    "p99": 12055,
+    "p999": 12055,
+    "max": 12055
+  },
+  "load": {
+    "max_duration": "1200s",
+    "model": "closed",
+    "samples": 200,
+    "session_ops": 1000,
+    "sessions": 1,
+    "think": "0s",
+    "warmup": "30s"
+  },
+  "slo": null,
+  "steps": [
+    {
+      "index": 0,
+      "target_rate": null,
+      "duration_s": 0.412664228,
+      "valid": true,
+      "slo_met": null,
+      "generator": {
+        "cpu_mean_pct": 0.1,
+        "cpu_max_pct": 0.1,
+        "arrivals": 0,
+        "late": 0,
+        "late_pct": 0.0,
+        "max_late_us": 0,
+        "dropped": 0
+      },
+      "ops": {
+        "imap.search.text-multi": {
+          "count": 200,
+          "errors": 0,
+          "error_rate": 0.0,
+          "throughput": 484.66,
+          "mean": 1915.4,
+          "min": 1606,
+          "p50": 1715,
+          "p90": 2605,
+          "p95": 2747,
+          "p99": 3479,
+          "p999": 3887,
+          "max": 3887,
+          "histogram": "HISTFAAAAL94nC2OMQoCMRBFJz+TBF1FliCyqJV4ALEWsbay9hzewM5ysRQbL2TjOTyCfxITMn8y8/4ki2ufRVySuvxfnYVP/5L9txZuHRKE2yMoA5jyKDQpE/WxdKOwLVYZ2a1ASsiULl8cyihDE/JsJVU2EGIgqKk8gtiYWcvUBhNzY1ZnIFjwaFnOnJsJBIwtF6xwwqYQB5zRYYkd7o5W+7hUImGKObVl1pIdcGcCDTXxrFEKT4c3cKR3S/iCB/ADSvoOtg==",
+          "items": {
+            "count": 200,
+            "sum": 24398,
+            "min": 15,
+            "max": 779,
+            "mean": 121.99
+          }
+        }
+      }
+    }
+  ],
+  "valid": true,
+  "best_step": null,
+  "best_rate": null
+}

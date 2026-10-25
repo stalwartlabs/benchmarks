@@ -1,0 +1,85 @@
+{
+  "schema": "mailbench/1",
+  "scenario": "c16-1m",
+  "cell": "c16-1m-sessions1",
+  "family": "imap",
+  "mode": "latency",
+  "target": "dovecot",
+  "variant": "fsync-always",
+  "profile": "c-reduced",
+  "hosts": [
+    "load1"
+  ],
+  "shards": [
+    "0/1"
+  ],
+  "dataset": "c",
+  "seed": 20261025,
+  "started_at_ms": 1792976655001,
+  "finished_at_ms": 1792976728802,
+  "rtt_us": {
+    "mean": 3784.3,
+    "min": 569,
+    "p50": 2845,
+    "p90": 7551,
+    "p95": 7699,
+    "p99": 10879,
+    "p999": 10879,
+    "max": 10879
+  },
+  "load": {
+    "max_duration": "1800s",
+    "model": "closed",
+    "samples": 2000,
+    "session_ops": 100,
+    "sessions": 1,
+    "think": "0s",
+    "warmup": "60s"
+  },
+  "slo": null,
+  "steps": [
+    {
+      "index": 0,
+      "target_rate": null,
+      "duration_s": 12.874478987,
+      "valid": true,
+      "slo_met": null,
+      "generator": {
+        "cpu_mean_pct": 0.3,
+        "cpu_max_pct": 0.5,
+        "arrivals": 0,
+        "late": 0,
+        "late_pct": 0.0,
+        "max_late_us": 0,
+        "dropped": 0
+      },
+      "ops": {
+        "imap.append": {
+          "count": 2000,
+          "errors": 0,
+          "error_rate": 0.0,
+          "throughput": 155.35,
+          "mean": 3529.8,
+          "min": 3078,
+          "p50": 3425,
+          "p90": 3973,
+          "p95": 4115,
+          "p99": 4535,
+          "p999": 5575,
+          "max": 7619,
+          "histogram": "HISTFAAAAXF4nDVRy1XEMAw0E61WEcYI4xey+zhx4kYJFEMBNAEVbAvc6YYWuFICow1EiWNb85Hs+7fTbSl4Kdsz/f0vcvg6fZTnn23j/RHXmCCaw6Q7URGgqJqpuru182fIsVWvI7r0uvQava9Dx4i1tlgbI6JH68zU2pejLYsctY8+UK0NUtVjaG9RR6vj2JzoVptX6jK6hfYYYx1iD1W6i5MAIaaaSgsWoBFiLEhjUTDMKJpJYhMkqE0hEFJClRM2hsiEwZQhYrnJHiFFPGlFHSwCTmzmxUxUFZ58px8KlAt1qhBCXR5PwmuiOZeWR1bowYOkEJgUuknWJvmxCoqVM9NonLv/MkYH1gTCSsbWWbYBypdk83VKqIayGBoYa8lbO2tPzGDaTLwgu5sEhYYEF94qKUpP4ngK7FqUJsYcdtCZxkhqSUdCsaf0LrlzbvKZGJzMkpR8qbRjTDhAZjxxcpnlHJg74Ap3XHxe4BU3+N7jF8EAGIY=",
+          "items": {
+            "count": 2000,
+            "sum": 2097284101,
+            "min": 1048642,
+            "max": 1048643,
+            "mean": 1048642.0505
+          }
+        }
+      }
+    }
+  ],
+  "valid": true,
+  "best_step": null,
+  "best_rate": null
+}

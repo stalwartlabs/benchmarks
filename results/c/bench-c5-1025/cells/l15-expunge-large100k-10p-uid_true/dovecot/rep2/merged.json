@@ -1,0 +1,93 @@
+{
+  "schema": "mailbench/1",
+  "scenario": "l15-expunge",
+  "cell": "l15-expunge-large100k-10p-uid_true",
+  "family": "imap-large",
+  "mode": "latency",
+  "target": "dovecot",
+  "profile": "c-reduced",
+  "hosts": [
+    "load1"
+  ],
+  "shards": [
+    "0/1"
+  ],
+  "dataset": "c",
+  "seed": 20261025,
+  "started_at_ms": 1792996412001,
+  "finished_at_ms": 1792997701385,
+  "rtt_us": {
+    "mean": 4910.8,
+    "min": 634,
+    "p50": 3057,
+    "p90": 11655,
+    "p95": 13327,
+    "p99": 14383,
+    "p999": 14383,
+    "max": 14383
+  },
+  "load": {
+    "max_duration": "1200s",
+    "model": "closed",
+    "samples": 50,
+    "session_ops": 1000,
+    "sessions": 1,
+    "think": "0s",
+    "warmup": "30s"
+  },
+  "slo": null,
+  "steps": [
+    {
+      "index": 0,
+      "target_rate": null,
+      "duration_s": 1200.022348808,
+      "valid": true,
+      "slo_met": null,
+      "generator": {
+        "cpu_mean_pct": 0.0,
+        "cpu_max_pct": 0.6,
+        "arrivals": 0,
+        "late": 0,
+        "late_pct": 0.0,
+        "max_late_us": 0,
+        "dropped": 0
+      },
+      "ops": {
+        "imap.uid_expunge": {
+          "count": 23,
+          "errors": 3,
+          "error_rate": 0.11538461538461539,
+          "throughput": 0.02,
+          "mean": 10211617.4,
+          "min": 1081344,
+          "p50": 10207231,
+          "p90": 11837439,
+          "p95": 12836863,
+          "p99": 18415615,
+          "p999": 18415615,
+          "max": 18415615,
+          "histogram": "HISTFAAAAF14nC2IsQ1AQBhG//8pLleoVBIK1VWiMMANojSEBSQK5a1gABuYgjkodcj5ku+95BVjyESklbjkt344wiL+jGFblduxG2bF0dFgKd8bchio8Agp1PRcymR5AEUKDNY=",
+          "items": {
+            "count": 23,
+            "sum": 230000,
+            "min": 10000,
+            "max": 10000,
+            "mean": 10000.0
+          },
+          "error_kinds": {
+            "rejected": 2,
+            "timeout": 1
+          },
+          "error_samples": [
+            "timed out after 600s",
+            "SELECT rejected: A5 NO [SERVERBUG] Internal error occurred. Refer to server log for more information. [2026-10-26 06:49:01] (180.004 + 0.000 + 180.003 secs).",
+            "SELECT rejected: A5 NO [SERVERBUG] Internal error occurred. Refer to server log for more information. [2026-10-26 06:52:01] (180.004 + 0.000 + 180.003 secs)."
+          ]
+        }
+      }
+    }
+  ],
+  "valid": true,
+  "best_step": null,
+  "best_rate": null
+}

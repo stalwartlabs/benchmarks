@@ -1,0 +1,16 @@
+id: c10-body
+title: "IMAP FETCH BODY.PEEK[] of a single message per size bucket"
+family: imap
+mode: latency
+targets: [stalwart, dovecot]
+variants: [{target: dovecot, name: fsync-always}]
+repetitions: 3
+cache: warm
+load_hosts: 1
+dataset: c
+load: {model: closed, sessions: 1, warmup: 60s, samples: 10000, max_duration: 30m}
+users: {set: regular, buckets: true}
+op: {kind: imap-fetch, fetch: body-bucket, bucket: 4k}
+matrix:
+  load.sessions: [1, 16]
+  op.bucket: [4k, 64k, 1m]

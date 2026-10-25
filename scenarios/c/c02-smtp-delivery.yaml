@@ -1,0 +1,18 @@
+id: c02
+title: "SMTP inbound: connect to message visible in the recipient INBOX (probe polls NOOP every 1 ms on the recipient INBOX while a message is in flight)"
+family: smtp-in
+mode: latency
+targets: [stalwart, dovecot]
+variants: [{target: dovecot, name: fsync-always}]
+repetitions: 3
+cache: warm
+load_hosts: 1
+dataset: c
+timeout: 60s
+load: {model: closed, sessions: 1, warmup: 60s, samples: 10000, max_duration: 30m}
+users: {set: regular}
+op: {kind: smtp, port: smtp, recipients: 1, size: 4k, probe: imap_poll}
+matrix:
+  load.sessions: [1, 16]
+  op.recipients: [1, 10]
+  op.size: [4k, 64k, mix]

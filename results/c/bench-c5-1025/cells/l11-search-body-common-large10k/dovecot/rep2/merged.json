@@ -1,0 +1,84 @@
+{
+  "schema": "mailbench/1",
+  "scenario": "l11-search-body-common",
+  "cell": "l11-search-body-common-large10k",
+  "family": "imap-large",
+  "mode": "latency",
+  "target": "dovecot",
+  "profile": "c-reduced",
+  "hosts": [
+    "load1"
+  ],
+  "shards": [
+    "0/1"
+  ],
+  "dataset": "c",
+  "seed": 20261025,
+  "started_at_ms": 1792982578001,
+  "finished_at_ms": 1792982608825,
+  "rtt_us": {
+    "mean": 4304.9,
+    "min": 603,
+    "p50": 3053,
+    "p90": 10023,
+    "p95": 11559,
+    "p99": 13623,
+    "p999": 13623,
+    "max": 13623
+  },
+  "load": {
+    "max_duration": "1200s",
+    "model": "closed",
+    "samples": 200,
+    "session_ops": 1000,
+    "sessions": 1,
+    "think": "0s",
+    "warmup": "30s"
+  },
+  "slo": null,
+  "steps": [
+    {
+      "index": 0,
+      "target_rate": null,
+      "duration_s": 0.823793664,
+      "valid": true,
+      "slo_met": null,
+      "generator": {
+        "cpu_mean_pct": 0.0,
+        "cpu_max_pct": 0.0,
+        "arrivals": 0,
+        "late": 0,
+        "late_pct": 0.0,
+        "max_late_us": 0,
+        "dropped": 0
+      },
+      "ops": {
+        "imap.search.body-common": {
+          "count": 200,
+          "errors": 0,
+          "error_rate": 0.0,
+          "throughput": 242.78,
+          "mean": 3636.5,
+          "min": 2806,
+          "p50": 3481,
+          "p90": 4311,
+          "p95": 4499,
+          "p99": 6747,
+          "p999": 6995,
+          "max": 6995,
+          "histogram": "HISTFAAAANZ4nC2QsY0CQQxFzbeX1QihEUIIId3pgtOGl1xKQIAogEIQTdABLdALHVAHCTnPs+zI4/W3//ff/bpcl2aTfxsf/+RJXo/rzXbPEXgNqnKiI3qOFpRGOJBpWsNFblANUqdNpqrCcc3bqICTNkOhJs3DApYrogva4dG1ScCMvhFhrWNcVbQBN+4FFf0SPp1RRKLp4ifxFWKpXLREYT4KpinWHvTN6xpu2sjOb/sGREpahoItDbTxEsrTTEVOsVF99CDx1xRNJ+211VEr3fP3DDoz9Qa5Aw4o",
+          "items": {
+            "count": 200,
+            "sum": 710987,
+            "min": 2378,
+            "max": 5433,
+            "mean": 3554.935
+          }
+        }
+      }
+    }
+  ],
+  "valid": true,
+  "best_step": null,
+  "best_rate": null
+}

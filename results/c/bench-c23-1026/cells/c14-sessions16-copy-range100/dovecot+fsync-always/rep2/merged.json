@@ -1,0 +1,92 @@
+{
+  "schema": "mailbench/1",
+  "scenario": "c14",
+  "cell": "c14-sessions16-copy-range100",
+  "family": "imap",
+  "mode": "latency",
+  "target": "dovecot",
+  "variant": "fsync-always",
+  "profile": "c-reduced",
+  "hosts": [
+    "load1"
+  ],
+  "shards": [
+    "0/1"
+  ],
+  "dataset": "c",
+  "seed": 20261025,
+  "started_at_ms": 1793014855001,
+  "finished_at_ms": 1793014953193,
+  "rtt_us": {
+    "mean": 2240.0,
+    "min": 605,
+    "p50": 1494,
+    "p90": 3221,
+    "p95": 3671,
+    "p99": 10879,
+    "p999": 10879,
+    "max": 10879
+  },
+  "load": {
+    "max_duration": "1800s",
+    "model": "closed",
+    "samples": 10000,
+    "session_ops": 100,
+    "sessions": 16,
+    "think": "0s",
+    "warmup": "60s"
+  },
+  "slo": null,
+  "steps": [
+    {
+      "index": 0,
+      "target_rate": null,
+      "duration_s": 38.113161582,
+      "valid": true,
+      "slo_met": null,
+      "generator": {
+        "cpu_mean_pct": 0.1,
+        "cpu_max_pct": 0.3,
+        "arrivals": 0,
+        "late": 0,
+        "late_pct": 0.0,
+        "max_late_us": 0,
+        "dropped": 0
+      },
+      "ops": {
+        "imap.copy": {
+          "count": 10005,
+          "errors": 2,
+          "error_rate": 0.000199860097931448,
+          "throughput": 262.51,
+          "mean": 11417.2,
+          "min": 2122,
+          "p50": 10631,
+          "p90": 17871,
+          "p95": 21007,
+          "p99": 27695,
+          "p999": 37727,
+          "max": 42751,
+          "histogram": "HISTFAAABk54nD2XTZYktQ6F3U6nUqVSuUy8eHHyNfX4GXAYcTgcBgwZM2JRMGHMFpiwFDbAOtgBfFeRdGVnRtiWpatrWVK//fzrf1rLX9r5d3k83+nnz19/a9//dU788Vn//V3/+13/uD/1H/qlv/ZvOo+XzvjC5yOeH9XzmTXmn7T81Fv/H08mr7y2D7/16DdrLF77GK2UnCOe9hjeJNjbaJLAFhOabrWvX0c79Uj4hjHEx2XcNDFqH4+SeeE7Sr10jrJUC09MX/9VywvT/WGGn2cNEXmSKm17PuFrUsMbg9dx4mf25QRXcJ76s6NoNNOepyGsz3LPNDnKhROPoPoow7eCC6VDr7XerRy5iQST4vFSe66jCLgUo+e/a/de+y/dupVGawLR3bvcYtnZAythxQ4GkGN+lBMmwGaQLYT8nujqU4SelOpVomUWgVGnya8NK9Tn/rLHEhZMwDRr1t38ZtLu6DDj9YMtqUOHAYIJdFnUCpPD5JTwm5SxjXEbUtQLTBvliAWx0y8ujMOxhZUxJSdRQ0zCVkwVQTam5t3aieQ6zKU+5TjyET1c5yMgw6HCW6kQwh7ae0bnyV85AruDJWcvFiLC8VZLYekSkyYdQQ8tuADhTIj6zu/QsZnieADMRAQvbHQR4QJGLAhSS1Zdro9i2NJ02DEljUBaRQRaferUpFsMWS37iT2bYDB0F5kiTSc2HLAFSbwiz7CYQ6IFSs2jlw6wZSKaDENBVjgjcS+1RRpcgQbidJ0OoG2ufqIUu4qT1NljUCGSA/7SwsSWP4KYow/tcB3IKCMjhmY5pAkxIGcxOKYEYMgYaoEy0TQBpFBEILOY0FGkDEiL6xCmnSeF/uYxWa1jxtEyxGBKHJMpeic4e8r3EHkQ5AnCgIWUmLxmK76CCRmsyonmFfwNdkICRHwosKc8l5jrNYBEMLgcTvSyeGzHtmLOY86wfelvHsHUtnL33A7f577NY20gy7zfM7e5G+u58v02N9/u+7a2jE1ye85MngE/y/ctIY/dM+Z+bNvElRVx9/frDhfbZsd7iz32NX3OfaJlop4R/GJt5pqbZSzL9InWz9YUFCw4Umvb1h2TCO2Y2nas+HqbLEceOOP33d9yi1i+UP12oCQn32Sns55ryfEjNwZcq4Fbd7/HAagjWbA1Y60A2tqPyN22OQdf3Mu1z7snvomOmgLTFgeI39bKuXbY2OfCNQwcwsQJMIS5AD2rsTkcM4bDWG94vIiXTee1A5Kx7YGbxx5DbuROVHD7P9kGNBhGd0YpR46A9PJ0ed/BAsEiMbb9Hr7IPulLYfp+LSJSeha8zskl40w4JbQ4N0Z2CJINijIUlfLgbjs3nz1G2CcGQ5eaWHGieJFo2MLVxZ2VS06hTGEgD+sWQVDWkWKOF4JpD4I7FDjcA2FHBZckKh2jXiEPCVyOAIPyAc74mmk7MENKsQSPY3FhnGukiwhehIGddUVD+jDSdT/7rmRg2ToKiVzB5FptummGZJiYl0FZ529Wtq+MgWznvACmDCvASrwQVzd2ykFSKDdqVjYhUSjZDF1LooO7ORcWdHiVMNGbqiXKT7IN2E5aaQg6BaKEeqqaYVcXXOkNi/jUlGaUBbLSP6IzZKZufiptjEqoyrtDRaNxFXVGZ9VU+vHKO9o+uA8Oc7ogG7qU0Eg+5Aa8xEdirDBjzB6Vw3ZjB6fDMbJRUNg8h+oGBBISKkLkOjGjwosDyjpCowSeckgFgCACntwgo1Iym0KIU1CB86ocFBZVHJQNpVHeVOzwL6o0VtULBcyoaqMqV0lY5Y8SJ2c5kVbVn9x4qQLWVFLUNYyqc1W2lZvPZq2qhUqfqeuo2qSk/uhDpK9ysJitxgVNF+m5VvtVHaFyvQrpMCp/tUQN3tVnXbRZPYZqqByg+xrVWFa5xQgl+FoNjFU/eLYBvXrY6lklVparSasu5UNHJWOt+pZrtV0CUE1q72dDY+pU29nasPla7e5DZaG8SbKawdfqFNV9qnP8t8k+Oyo1sfKWhvF69t30FRetPVdfWyIiS313P1viPj6uDlYt8PWB+vy8Ckd12C9D3baa/lEA/19d76vkpbX/t9AwVCuN8qf+JdNfdGn+un8l+2WeRvelf1vKv+P56aNFf6Cq/1IIyuf9x/7TOyb/ARUAXik=",
+          "items": {
+            "count": 10005,
+            "sum": 1000500,
+            "min": 100,
+            "max": 100,
+            "mean": 100.0
+          },
+          "error_kinds": {
+            "rejected": 2
+          },
+          "error_samples": [
+            "COPY rejected: A202 NO [TRYCREATE] Mailbox was deleted under us (0.001 + 0.000 secs).",
+            "COPY rejected: A182 NO [TRYCREATE] Mailbox was deleted under us (0.007 + 0.000 + 0.006 secs)."
+          ]
+        }
+      }
+    }
+  ],
+  "valid": true,
+  "best_step": null,
+  "best_rate": null
+}

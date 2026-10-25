@@ -1,0 +1,5 @@
+Log volume on c2 (eastasia), measured 2026-10-26 11:25Z, VMs up since 2026-10-25 21:28Z; tests ran 22:00Z to 11:25Z (about 13.4 h, includes the 4 resets/reseeds and idle waits).
+Log disk: /dev/root 61 GB on both servers (OS disk, not the NVMe data disk). Stalwart host 6.2 GB used (11%), 55 GB free; Dovecot host 3.8 GB used (7%), 58 GB free.
+Stalwart (INFO level, /var/log/stalwart): stalwart.log.2026-10-25 615,597,125 bytes + stalwart.log.2026-10-26 1,767,794,000 bytes (so far) = 2,383,391,125 bytes (2.22 GiB). recovery.log 1,557 bytes.
+Postfix (maillog_file /var/log/postfix.log): 690,245,356 bytes. Dovecot (log_path /var/log/dovecot.log): 318,584,813 bytes. Together 1,008,830,169 bytes (0.94 GiB).
+Ratio Stalwart : Postfix+Dovecot = 2.36 : 1. journald: 16 MB (Stalwart host), 24 MB (Dovecot host). c1 was torn down before its numbers were taken; on c1 at 00:18Z the Stalwart log was 437,642,484 bytes for the first 2.5 h.

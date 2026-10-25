@@ -1,0 +1,41 @@
+{
+  "track": "m",
+  "description": "Track M: Stalwart cluster on PostgreSQL (primary, synchronous standby, async read replica), Redis with Sentinel, Garage S3 in the nearest region, clients in a remote region",
+  "regions": {
+    "main": {"location": "centralus", "ec2_region": "REGION_M", "prefix": "10.33.0.0/16", "ppg": true},
+    "s3": {"location": "northcentralus", "ec2_region": "REGION_M3", "prefix": "10.34.0.0/16", "ppg": true},
+    "clients": {"location": "westcentralus", "ec2_region": "REGION_CL", "prefix": "10.38.0.0/16", "ppg": false}
+  },
+  "vms": [
+    {"name": "stalwart1", "role": "stalwart", "region": "main", "size": "Standard_D8ads_v7", "ec2_type": "m8ad.2xlarge", "disk": 64, "nvme": true,
+     "provision": ["os-tuning", "sentinel", "stalwart"]},
+    {"name": "stalwart2", "role": "stalwart", "region": "main", "size": "Standard_D8ads_v7", "ec2_type": "m8ad.2xlarge", "disk": 64, "nvme": true,
+     "provision": ["os-tuning", "sentinel", "stalwart"]},
+    {"name": "pg1", "role": "postgres-primary", "region": "main", "size": "Standard_D16ads_v7", "ec2_type": "m8ad.4xlarge", "disk": 64, "nvme": true,
+     "provision": ["os-tuning", "postgres"]},
+    {"name": "pg2", "role": "postgres-standby", "region": "main", "size": "Standard_D8ads_v7", "ec2_type": "m8ad.2xlarge", "disk": 64, "nvme": true,
+     "provision": ["os-tuning", "postgres"]},
+    {"name": "pg3", "role": "postgres-standby", "region": "main", "size": "Standard_D8ads_v7", "ec2_type": "m8ad.2xlarge", "disk": 64, "nvme": true,
+     "provision": ["os-tuning", "postgres"]},
+    {"name": "redis1", "role": "redis", "region": "main", "size": "Standard_D2as_v7", "ec2_type": "m8a.large", "disk": 64,
+     "provision": ["os-tuning", "redis", "sentinel"]},
+    {"name": "redis2", "role": "redis", "region": "main", "size": "Standard_D2as_v7", "ec2_type": "m8a.large", "disk": 64,
+     "provision": ["os-tuning", "redis"]},
+    {"name": "sink", "role": "sink", "region": "main", "size": "Standard_D2as_v7", "ec2_type": "m8a.large", "disk": 64,
+     "provision": ["os-tuning", "loadgen", "dns-stub", "sink"]},
+    {"name": "garage1", "role": "garage", "region": "s3", "size": "Standard_D4ads_v7", "ec2_type": "m8ad.xlarge", "disk": 64, "nvme": true,
+     "provision": ["os-tuning", "garage"]},
+    {"name": "garage2", "role": "garage", "region": "s3", "size": "Standard_D4ads_v7", "ec2_type": "m8ad.xlarge", "disk": 64, "nvme": true,
+     "provision": ["os-tuning", "garage"]},
+    {"name": "garage3", "role": "garage", "region": "s3", "size": "Standard_D4ads_v7", "ec2_type": "m8ad.xlarge", "disk": 64, "nvme": true,
+     "provision": ["os-tuning", "garage"]},
+    {"name": "load-m", "role": "load", "region": "clients", "size": "Standard_D16as_v7", "ec2_type": "c8a.4xlarge", "disk": 128,
+     "provision": ["os-tuning", "loadgen"]}
+  ],
+  "targets": {"stalwart": "lb:public"},
+  "lbs": [
+    {"name": "public", "kind": "public", "region": "main", "ports": [25, 465, 587, 993, 443], "backends": ["stalwart1", "stalwart2"], "clients": ["load-m"]},
+    {"name": "s3", "kind": "internal", "region": "s3", "ports": [3900], "backends": ["garage1", "garage2", "garage3"]}
+  ],
+  "peerings": [["main", "s3"], ["main", "clients"]]
+}

@@ -1,0 +1,4 @@
+c03 on bench-c10-1026 stopped by w1 at 2026-10-26T06:26:02Z on coord-bench's ruling.
+Finished: attempt1-main (stalwart rep1-3, dovecot rep1-3, all merged) and the CV rerun pass 2 up to stalwart rep1, stalwart rep2, dovecot rep1 (merged); dovecot rep2 of pass 2 was killed mid-run (no result kept) and the dovecot+fsync-always variant reps were not run.
+Why: c03 ran without cleanup between repetitions (best step fell 10, 5, 5, 4 as mailboxes grew); clean reruns run on c19/c20 (wc-b) and this cluster's time is needed for its c01 shard. Finished reps are kept as a fallback if the c19 rerun fails.
+Before the c01 shard the mailboxes of both servers were cleaned back to the seeded counts (mailbench cleanup + doveadm purge -A).

@@ -1,0 +1,97 @@
+{
+  "schema": "mailbench/1",
+  "scenario": "c14",
+  "cell": "c14-sessions16-move-10p",
+  "family": "imap",
+  "mode": "latency",
+  "target": "dovecot",
+  "variant": "fsync-always",
+  "profile": "c-reduced",
+  "hosts": [
+    "load1"
+  ],
+  "shards": [
+    "0/1"
+  ],
+  "dataset": "c",
+  "seed": 20261025,
+  "started_at_ms": 1793016388002,
+  "finished_at_ms": 1793016783216,
+  "rtt_us": {
+    "mean": 2605.1,
+    "min": 515,
+    "p50": 2837,
+    "p90": 4219,
+    "p95": 4655,
+    "p99": 5159,
+    "p999": 5159,
+    "max": 5159
+  },
+  "load": {
+    "max_duration": "1800s",
+    "model": "closed",
+    "samples": 10000,
+    "session_ops": 100,
+    "sessions": 16,
+    "think": "0s",
+    "warmup": "60s"
+  },
+  "slo": null,
+  "steps": [
+    {
+      "index": 0,
+      "target_rate": null,
+      "duration_s": 260.675355811,
+      "valid": true,
+      "slo_met": null,
+      "generator": {
+        "cpu_mean_pct": 0.0,
+        "cpu_max_pct": 0.2,
+        "arrivals": 0,
+        "late": 0,
+        "late_pct": 0.0,
+        "max_late_us": 0,
+        "dropped": 0
+      },
+      "ops": {
+        "imap.move": {
+          "count": 10005,
+          "errors": 10,
+          "error_rate": 0.000998502246630055,
+          "throughput": 38.38,
+          "mean": 271298.0,
+          "min": 22512,
+          "p50": 98559,
+          "p90": 468735,
+          "p95": 759295,
+          "p99": 4202495,
+          "p999": 10690559,
+          "max": 17235967,
+          "histogram": "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",
+          "items": {
+            "count": 10005,
+            "sum": 1611780,
+            "min": 103,
+            "max": 1204,
+            "mean": 161.0974512743628
+          },
+          "error_kinds": {
+            "io": 3,
+            "rejected": 1,
+            "timeout": 6
+          },
+          "error_samples": [
+            "I/O error: connection closed by server",
+            "I/O error: connection closed by server",
+            "timed out after 120s",
+            "I/O error: connection closed by server",
+            "SELECT rejected: A70 NO [SERVERBUG] Internal error occurred. Refer to server log for more information. [2026-10-26 12:11:12] (0.001 + 0.000 secs)."
+          ]
+        }
+      }
+    }
+  ],
+  "valid": true,
+  "best_step": null,
+  "best_rate": null
+}

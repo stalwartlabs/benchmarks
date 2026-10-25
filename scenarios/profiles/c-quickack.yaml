@@ -1,0 +1,28 @@
+id: c-quickack
+rules:
+  - match: ["*"]
+    set: {variants: []}
+  - match: ["c02-idle-*"]
+    exclude: true
+  - match: ["c02-idle-sessions1-recipients1-4k"]
+    exclude: false
+    set: {repetitions: 1, load.samples: 500}
+  - match: ["c07-*", "c08-*", "c09-*", "c10-*", "c11-*", "c12-*", "l*"]
+    set: {variants: []}
+  - match: ["l*"]
+    set: {repetitions: 2}
+  - match: ["l*-10p*"]
+    set: {load.samples: 50}
+  - match: ["l*-cold-*"]
+    exclude: true
+    set: {repetitions: 10, load.samples: 1}
+  - match: ["l09-select-cold-*", "l10-fetch-cold-*-flags_all", "l11-search-body-common-cold-*", "l12-sort-cold-*-date", "l13-store-cold-*"]
+    exclude: false
+groups:
+  - {name: qa-c4b, match: ["c01-sessions1-recipients1-4k", "c02-sessions1-recipients1-4k"]}
+  - {name: qa-c2, match: ["c01-1m-sessions1-recipients1", "c01-1m-sessions16-recipients1"]}
+  - {name: qa-c4, match: ["c01-sessions16-recipients1-4k", "c01-sessions16-recipients10-mix", "c02-sessions16-recipients10-mix", "c02-idle-sessions1-recipients1-4k"]}
+  - {name: qa-c6, match: ["c04-sessions1-4k", "c04-sessions16-4k", "c05-sessions1-4k", "c05-sessions16-mix"]}
+  - {name: qa-tail1, match: ["c01-sessions1-recipients10-4k", "c01-sessions16-recipients10-4k"]}
+  - {name: qa-tail2, match: ["c02-sessions16-recipients1-4k", "c02-sessions16-recipients10-4k", "c05-sessions16-4k", "c02-sessions1-recipients10-4k"]}
+  - {name: qa-tail3, match: ["c01-1m-sessions1-recipients10", "c01-1m-sessions16-recipients10", "c02-1m-*"]}

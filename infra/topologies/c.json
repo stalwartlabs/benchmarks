@@ -1,0 +1,22 @@
+{
+  "track": "c",
+  "description": "Track C: Stalwart (RocksDB) vs Postfix + Dovecot on identical single nodes, clients in the same proximity placement group. VMs are listed in creation order: the first one pins the proximity placement group to a datacenter",
+  "regions": {
+    "main": {"location": "westus3", "ec2_region": "REGION_C", "prefix": "10.31.0.0/16", "ppg": true}
+  },
+  "vms": [
+    {"name": "load1", "role": "load", "region": "main", "size": "Standard_D16as_v7", "ec2_type": "c8a.4xlarge", "disk": 128,
+     "provision": ["os-tuning", "loadgen"]},
+    {"name": "load2", "role": "load", "region": "main", "size": "Standard_D16as_v7", "ec2_type": "c8a.4xlarge", "disk": 128,
+     "provision": ["os-tuning", "loadgen"]},
+    {"name": "stalwart", "role": "stalwart", "region": "main", "size": "Standard_D8ads_v7", "ec2_type": "m8ad.2xlarge", "disk": 64, "nvme": true,
+     "provision": ["os-tuning", "stalwart"]},
+    {"name": "dovecot", "role": "postfix-dovecot", "region": "main", "size": "Standard_D8ads_v7", "ec2_type": "m8ad.2xlarge", "disk": 64, "nvme": true,
+     "provision": ["os-tuning", "postfix", "dovecot"]},
+    {"name": "sink", "role": "sink", "region": "main", "size": "Standard_D2as_v7", "ec2_type": "m8a.large", "disk": 64,
+     "provision": ["os-tuning", "loadgen", "dns-stub", "sink"]}
+  ],
+  "targets": {"stalwart": "stalwart", "dovecot": "dovecot"},
+  "lbs": [],
+  "peerings": []
+}

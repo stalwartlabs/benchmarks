@@ -1,0 +1,93 @@
+{
+  "schema": "mailbench/1",
+  "scenario": "l14-copy-move",
+  "cell": "l14-copy-move-large100k-move-10p",
+  "family": "imap-large",
+  "mode": "latency",
+  "target": "dovecot",
+  "profile": "c-reduced",
+  "hosts": [
+    "load1"
+  ],
+  "shards": [
+    "0/1"
+  ],
+  "dataset": "c",
+  "seed": 20261025,
+  "started_at_ms": 1792990080001,
+  "finished_at_ms": 1792991466278,
+  "rtt_us": {
+    "mean": 6106.6,
+    "min": 663,
+    "p50": 2151,
+    "p90": 17855,
+    "p95": 18175,
+    "p99": 20671,
+    "p999": 20671,
+    "max": 20671
+  },
+  "load": {
+    "max_duration": "1200s",
+    "model": "closed",
+    "samples": 50,
+    "session_ops": 1000,
+    "sessions": 1,
+    "think": "0s",
+    "warmup": "30s"
+  },
+  "slo": null,
+  "steps": [
+    {
+      "index": 0,
+      "target_rate": null,
+      "duration_s": 1200.091519631,
+      "valid": true,
+      "slo_met": null,
+      "generator": {
+        "cpu_mean_pct": 0.0,
+        "cpu_max_pct": 0.3,
+        "arrivals": 0,
+        "late": 0,
+        "late_pct": 0.0,
+        "max_late_us": 0,
+        "dropped": 0
+      },
+      "ops": {
+        "imap.move": {
+          "count": 20,
+          "errors": 3,
+          "error_rate": 0.13043478260869565,
+          "throughput": 0.02,
+          "mean": 13338675.2,
+          "min": 3182592,
+          "p50": 11993087,
+          "p90": 18399231,
+          "p95": 25608191,
+          "p99": 30113791,
+          "p999": 30113791,
+          "max": 30113791,
+          "histogram": "HISTFAAAAFx4nC2KvQmAMBSE3/v8w8rCQoL29i5g4Qiu5AYZIS5gIa7gBG4hCC5gJLnj7uD4usXWIjJIUBJX/7rsKuMTDncqt6Gk8j6UVymYaZh8egwtO7iMzXM5LuUDOnoN9w==",
+          "items": {
+            "count": 20,
+            "sum": 200000,
+            "min": 10000,
+            "max": 10000,
+            "mean": 10000.0
+          },
+          "error_kinds": {
+            "rejected": 2,
+            "timeout": 1
+          },
+          "error_samples": [
+            "timed out after 600s",
+            "SELECT rejected: A6 NO [SERVERBUG] Internal error occurred. Refer to server log for more information. [2026-10-26 05:05:06] (180.003 + 0.000 + 180.002 secs).",
+            "SELECT rejected: A6 NO [SERVERBUG] Internal error occurred. Refer to server log for more information. [2026-10-26 05:08:06] (180.003 + 0.000 + 180.002 secs)."
+          ]
+        }
+      }
+    }
+  ],
+  "valid": true,
+  "best_step": null,
+  "best_rate": null
+}

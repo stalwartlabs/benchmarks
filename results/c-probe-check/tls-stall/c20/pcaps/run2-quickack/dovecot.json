@@ -1,0 +1,163 @@
+{
+  "schema": "mailbench/1",
+  "scenario": "c01",
+  "cell": "c01-sessions1-recipients1-4k",
+  "family": "smtp-in",
+  "mode": "latency",
+  "target": "dovecot",
+  "profile": "c-reduced",
+  "hosts": [
+    "load1"
+  ],
+  "shards": [
+    "0/1"
+  ],
+  "dataset": "c",
+  "seed": 20261025,
+  "started_at_ms": 1792998642210,
+  "finished_at_ms": 1792998645442,
+  "rtt_us": {
+    "mean": 4854.1,
+    "min": 683,
+    "p50": 2915,
+    "p90": 10215,
+    "p95": 11063,
+    "p99": 18783,
+    "p999": 18783,
+    "max": 18783
+  },
+  "load": {
+    "max_duration": "120s",
+    "model": "closed",
+    "samples": 20,
+    "session_ops": 100,
+    "sessions": 1,
+    "think": "0s",
+    "warmup": "2s"
+  },
+  "slo": null,
+  "steps": [
+    {
+      "index": 0,
+      "target_rate": null,
+      "duration_s": 1.23261951,
+      "valid": true,
+      "slo_met": null,
+      "generator": {
+        "cpu_mean_pct": 0.0,
+        "cpu_max_pct": 0.1,
+        "arrivals": 0,
+        "late": 0,
+        "late_pct": 0.0,
+        "max_late_us": 0,
+        "dropped": 0
+      },
+      "ops": {
+        "smtp": {
+          "count": 20,
+          "errors": 0,
+          "error_rate": 0.0,
+          "throughput": 16.23,
+          "mean": 57442.4,
+          "min": 46688,
+          "p50": 55679,
+          "p90": 66495,
+          "p95": 68607,
+          "p99": 76479,
+          "p999": 76479,
+          "max": 76479,
+          "histogram": "HISTFAAAAFd4nC2IoQ2AMBAA/68hKBQhGCwSwQRVTIEkgQnYABSyKzATFoUnYQHatCfukms2V4pIJxGTqkGXO8W+cTwzNbcyUdFjyMhZ/GoZ2JWClZFDsXzKD9b6C+A=",
+          "phases": {
+            "command": {
+              "count": 20,
+              "mean": 6375.4,
+              "min": 1925,
+              "p50": 5191,
+              "p90": 11383,
+              "p95": 13551,
+              "p99": 18383,
+              "p999": 18383,
+              "max": 18383,
+              "histogram": "HISTFAAAAFx4nC2Iqw2AMBQAX6/l4xAIDGEJBug0DMAOGHQlFoJCoBsUO8AY4LCElBN3yZWdy0WkloD+qz4dbhR7h9FXbOANe0xEwapoOQ2LwjIrGjNpnpSMCwaDT3gBbnMP7A=="
+            },
+            "connect": {
+              "count": 20,
+              "mean": 5666.2,
+              "min": 725,
+              "p50": 3225,
+              "p90": 12127,
+              "p95": 20399,
+              "p99": 27375,
+              "p999": 27375,
+              "max": 27375,
+              "histogram": "HISTFAAAAF94nC2IMQpAYBhAv+/9PyXKYHUSiyM4k+IEMpmURUaTWTLYOYHdYpd4w3v14qKKRCSRD/NXX+1VJ+n1jd4npFV6pbTkyuQw+EzKYciY4TYsymhYLZtHbWkCTpcH8KMSXQ=="
+            },
+            "greeting": {
+              "count": 20,
+              "mean": 1038.4,
+              "min": 295,
+              "p50": 622,
+              "p90": 1756,
+              "p95": 3423,
+              "p99": 5259,
+              "p999": 5259,
+              "max": 5259,
+              "histogram": "HISTFAAAAFl4nC2IsQ1AUBQA3zsSFKL4rV5LqVKLaQygkxjgj0BrAjOITqMUvRFE/r/iLrl8tEZESnEEvvrrtIs0rxt7SE1FiqGjh4IJBlpWJWJTHuWAK2bOuBM+AtgOFQ=="
+            },
+            "tls": {
+              "count": 20,
+              "mean": 44345.6,
+              "min": 41632,
+              "p50": 43711,
+              "p90": 46687,
+              "p95": 47263,
+              "p99": 50431,
+              "p999": 50431,
+              "max": 50431,
+              "histogram": "HISTFAAAAE94nC2IMQ2AMBQFXw8aQghTVxYGJkYEIAAbSMFBLbCgAw/oQEJ/075L7iU3XTFIWlTW1HdZX7y1/yU8JytiNAbDtx2eYO7ZOGDmdSRBQQfT"
+            }
+          },
+          "items": {
+            "count": 20,
+            "sum": 20,
+            "min": 1,
+            "max": 1,
+            "mean": 1.0
+          }
+        },
+        "smtp.message": {
+          "count": 20,
+          "errors": 0,
+          "error_rate": 0.0,
+          "throughput": 16.23,
+          "mean": 6375.4,
+          "min": 1925,
+          "p50": 5191,
+          "p90": 11383,
+          "p95": 13551,
+          "p99": 18383,
+          "p999": 18383,
+          "max": 18383,
+          "histogram": "HISTFAAAAFx4nC2Iqw2AMBQAX6/l4xAIDGEJBug0DMAOGHQlFoJCoBsUO8AY4LCElBN3yZWdy0WkloD+qz4dbhR7h9FXbOANe0xEwapoOQ2LwjIrGjNpnpSMCwaDT3gBbnMP7A==",
+          "phases": {
+            "command": {
+              "count": 20,
+              "mean": 6375.4,
+              "min": 1925,
+              "p50": 5191,
+              "p90": 11383,
+              "p95": 13551,
+              "p99": 18383,
+              "p999": 18383,
+              "max": 18383,
+              "histogram": "HISTFAAAAFx4nC2Iqw2AMBQAX6/l4xAIDGEJBug0DMAOGHQlFoJCoBsUO8AY4LCElBN3yZWdy0WkloD+qz4dbhR7h9FXbOANe0xEwapoOQ2LwjIrGjNpnpSMCwaDT3gBbnMP7A=="
+            }
+          }
+        }
+      }
+    }
+  ],
+  "valid": true,
+  "best_step": null,
+  "best_rate": null
+}

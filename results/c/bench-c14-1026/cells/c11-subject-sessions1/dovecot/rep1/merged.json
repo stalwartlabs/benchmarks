@@ -1,0 +1,84 @@
+{
+  "schema": "mailbench/1",
+  "scenario": "c11-subject",
+  "cell": "c11-subject-sessions1",
+  "family": "imap",
+  "mode": "latency",
+  "target": "dovecot",
+  "profile": "c-reduced",
+  "hosts": [
+    "load1"
+  ],
+  "shards": [
+    "0/1"
+  ],
+  "dataset": "c",
+  "seed": 20261025,
+  "started_at_ms": 1792997976002,
+  "finished_at_ms": 1792998039041,
+  "rtt_us": {
+    "mean": 2116.9,
+    "min": 701,
+    "p50": 1004,
+    "p90": 5263,
+    "p95": 5543,
+    "p99": 5795,
+    "p999": 5795,
+    "max": 5795
+  },
+  "load": {
+    "max_duration": "1800s",
+    "model": "closed",
+    "samples": 10000,
+    "session_ops": 100,
+    "sessions": 1,
+    "think": "0s",
+    "warmup": "60s"
+  },
+  "slo": null,
+  "steps": [
+    {
+      "index": 0,
+      "target_rate": null,
+      "duration_s": 3.03938401,
+      "valid": true,
+      "slo_met": null,
+      "generator": {
+        "cpu_mean_pct": 0.2,
+        "cpu_max_pct": 0.3,
+        "arrivals": 0,
+        "late": 0,
+        "late_pct": 0.0,
+        "max_late_us": 0,
+        "dropped": 0
+      },
+      "ops": {
+        "imap.search.subject": {
+          "count": 10000,
+          "errors": 0,
+          "error_rate": 0.0,
+          "throughput": 3290.14,
+          "mean": 181.4,
+          "min": 127,
+          "p50": 149,
+          "p90": 271,
+          "p95": 381,
+          "p99": 526,
+          "p999": 602,
+          "max": 821,
+          "histogram": "HISTFAAAAaJ4nC2Ov2sVQRDHb2bnNuNkWZd1OZbjOB7HEfTxkFeFdEKq1CFaiIiIWPgvCBYSHoIiQkDEUkSsRMTCIoXFI0UIIhb5C6xF7BVn87ILu/Pr+/lOt39wqargV7U65vyH8pwevK2u/V4V/oLvbh7Bwvw0p7Sk13RM3+hHfVx/qZf0iZ7RoXlv/uEL89h8xxPcxwV+hhP4CkfwBv7AISzhHbyCBXyAl/ARnmj8HB7du79399aD27s37uxt7+7Mtvrtbj69Ot/ZnM22Ni/PxxT7Loyp3+jHYRjy2HSNc857Hvwkj9ONMXeTsW2iT22Mzol3Nsbc90M/bSbtZBxyH5OPQYSJhJmT5DakkDm7JgXxmVsOqcmtJM9CQsHbwtFEYmJxKvLsSWxFaPURwqoEiHgB0ei9SAZLTQeISFvM5B27FIlVbaMXqx0WHSKLlVUpqYZrKhRkshQsiQTHuqP1TpRisXhUWOtV8pkT1sW8YByJc9aVHaWN7F3y1oqg1bWpYh2iglaXWj0NrtPaSqkg9VdjKuhSWDHXNFunp4AP8Qpex/9l6zx1",
+          "items": {
+            "count": 10000,
+            "sum": 10427,
+            "min": 0,
+            "max": 46,
+            "mean": 1.0427
+          }
+        }
+      }
+    }
+  ],
+  "valid": true,
+  "best_step": null,
+  "best_rate": null
+}

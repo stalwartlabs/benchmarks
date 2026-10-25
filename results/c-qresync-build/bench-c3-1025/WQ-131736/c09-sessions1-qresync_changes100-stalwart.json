@@ -1,0 +1,84 @@
+{
+  "schema": "mailbench/1",
+  "scenario": "c09",
+  "cell": "c09-sessions1-qresync_changes100",
+  "family": "imap",
+  "mode": "latency",
+  "target": "stalwart",
+  "profile": "c-reduced",
+  "hosts": [
+    "load1"
+  ],
+  "shards": [
+    "0/1"
+  ],
+  "dataset": "c",
+  "seed": 20261025,
+  "started_at_ms": 1793020656856,
+  "finished_at_ms": 1793020722103,
+  "rtt_us": {
+    "mean": 1861.2,
+    "min": 501,
+    "p50": 733,
+    "p90": 5395,
+    "p95": 5899,
+    "p99": 6375,
+    "p999": 6375,
+    "max": 6375
+  },
+  "load": {
+    "max_duration": "1800s",
+    "model": "closed",
+    "samples": 10000,
+    "session_ops": 100,
+    "sessions": 1,
+    "think": "0s",
+    "warmup": "60s"
+  },
+  "slo": null,
+  "steps": [
+    {
+      "index": 0,
+      "target_rate": null,
+      "duration_s": 5.246894944,
+      "valid": true,
+      "slo_met": null,
+      "generator": {
+        "cpu_mean_pct": 0.6,
+        "cpu_max_pct": 0.8,
+        "arrivals": 0,
+        "late": 0,
+        "late_pct": 0.0,
+        "max_late_us": 0,
+        "dropped": 0
+      },
+      "ops": {
+        "imap.select_qresync": {
+          "count": 10000,
+          "errors": 0,
+          "error_rate": 0.0,
+          "throughput": 1905.89,
+          "mean": 132.3,
+          "min": 66,
+          "p50": 133,
+          "p90": 145,
+          "p95": 150,
+          "p99": 167,
+          "p999": 205,
+          "max": 753,
+          "histogram": "HISTFAAAANx4nC1Or2tCURQ+99yzcy+Py+PCHkOGSdzCGDLGwtLWhm0gBjH6F4iIUQRFzAomg8EgRlHBbhSDiElMJjEYTGLwPvQL36/yfdFa6xEApnCDvKsIad3qwe/xVlQF24j2jQ7iH+l8KfuXeH0O2GNGQgfNxIBAGpw1vvEisfdkMlcsj8RBnMUQ5/IiB9R9aPCKd9zQM7VQWzVRFdXnOlf4RDtayr7cYwfbuBE90RSFXCb19fOdiL99RmP+k7UBW2u02wLNHhqNzoS7RCjdD0nhBScuSHzBfxwrvAIAMied",
+          "items": {
+            "count": 10000,
+            "sum": 741152,
+            "min": 0,
+            "max": 100,
+            "mean": 74.1152
+          }
+        }
+      }
+    }
+  ],
+  "valid": true,
+  "best_step": null,
+  "best_rate": null
+}

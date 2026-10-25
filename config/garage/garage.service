@@ -1,0 +1,17 @@
+[Unit]
+Description=Garage S3 storage
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Environment=RUST_LOG=garage=info
+ExecStart=/usr/local/bin/garage -c /etc/garage.toml server
+User=garage
+Group=garage
+LimitNOFILE=1048576
+Restart=on-failure
+RestartSec=5
+TimeoutStopSec=60
+
+[Install]
+WantedBy=multi-user.target

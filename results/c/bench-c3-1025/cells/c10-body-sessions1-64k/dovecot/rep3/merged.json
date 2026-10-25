@@ -1,0 +1,84 @@
+{
+  "schema": "mailbench/1",
+  "scenario": "c10-body",
+  "cell": "c10-body-sessions1-64k",
+  "family": "imap",
+  "mode": "latency",
+  "target": "dovecot",
+  "profile": "c-reduced",
+  "hosts": [
+    "load1"
+  ],
+  "shards": [
+    "0/1"
+  ],
+  "dataset": "c",
+  "seed": 20261025,
+  "started_at_ms": 1792978103001,
+  "finished_at_ms": 1792978172946,
+  "rtt_us": {
+    "mean": 1641.5,
+    "min": 452,
+    "p50": 630,
+    "p90": 4427,
+    "p95": 6219,
+    "p99": 6475,
+    "p999": 6475,
+    "max": 6475
+  },
+  "load": {
+    "max_duration": "1800s",
+    "model": "closed",
+    "samples": 10000,
+    "session_ops": 100,
+    "sessions": 1,
+    "think": "0s",
+    "warmup": "60s"
+  },
+  "slo": null,
+  "steps": [
+    {
+      "index": 0,
+      "target_rate": null,
+      "duration_s": 9.944327745,
+      "valid": true,
+      "slo_met": null,
+      "generator": {
+        "cpu_mean_pct": 0.9,
+        "cpu_max_pct": 1.8,
+        "arrivals": 0,
+        "late": 0,
+        "late_pct": 0.0,
+        "max_late_us": 0,
+        "dropped": 0
+      },
+      "ops": {
+        "imap.fetch": {
+          "count": 10000,
+          "errors": 0,
+          "error_rate": 0.0,
+          "throughput": 1005.6,
+          "mean": 906.1,
+          "min": 269,
+          "p50": 342,
+          "p90": 397,
+          "p95": 410,
+          "p99": 466,
+          "p999": 45567,
+          "max": 950271,
+          "histogram": "HISTFAAAAYF4nC1QPUhbURS+3/dubp83r4/XtJUIQgstHYq0b+ggIm2WpsXZIVMmERERBxEREYWgkiGIRvEPcQgimUQcxEFFBB1EnBwEEfzBTcRBVBA9iZ7vnr/vfucMpzoz9l4pTKkXc14zSuFwrKD+XL8QU5pKq1IwtFp7xvdjQTwe+1AXVteEn8Nf9XWJRENrHnPIYxZFrGMJq9jHreAOBRY5wUkuc16qVa7wgKOCnPg2M3xAjln28wZXOMc2jrArs6c4EBSwIPu2kMOkeFG6PLqyUnQOozuPrAhG0NOW7k01dTWmk7X/G1MtPX2DmMe0YA9rsmdT4pzIMlhER3N7OpVMJesTv7+HtWHNj6/fgphvxbSttPHABkGl51nrWeO7nrHW0PO1L511qV1jKC+iy+fQxnGVMVqxfBtqzQrJDhVJhxRSpPKtnZKmTNMxEfINI2Uh3/ITK3QVf/ILNyK8NHys4oXLIcMz8inOgSjvo/zH448c97kT5Qn4l/eGM+A7PgNYFFjb",
+          "items": {
+            "count": 10000,
+            "sum": 10000,
+            "min": 1,
+            "max": 1,
+            "mean": 1.0
+          }
+        }
+      }
+    }
+  ],
+  "valid": true,
+  "best_step": null,
+  "best_rate": null
+}

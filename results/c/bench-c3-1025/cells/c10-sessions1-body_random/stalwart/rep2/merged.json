@@ -1,0 +1,84 @@
+{
+  "schema": "mailbench/1",
+  "scenario": "c10",
+  "cell": "c10-sessions1-body_random",
+  "family": "imap",
+  "mode": "latency",
+  "target": "stalwart",
+  "profile": "c-reduced",
+  "hosts": [
+    "load1"
+  ],
+  "shards": [
+    "0/1"
+  ],
+  "dataset": "c",
+  "seed": 20261025,
+  "started_at_ms": 1792984635000,
+  "finished_at_ms": 1792984697122,
+  "rtt_us": {
+    "mean": 2466.1,
+    "min": 521,
+    "p50": 733,
+    "p90": 7683,
+    "p95": 8031,
+    "p99": 8831,
+    "p999": 8831,
+    "max": 8831
+  },
+  "load": {
+    "max_duration": "1800s",
+    "model": "closed",
+    "samples": 10000,
+    "session_ops": 100,
+    "sessions": 1,
+    "think": "0s",
+    "warmup": "60s"
+  },
+  "slo": null,
+  "steps": [
+    {
+      "index": 0,
+      "target_rate": null,
+      "duration_s": 2.12151417,
+      "valid": true,
+      "slo_met": null,
+      "generator": {
+        "cpu_mean_pct": 0.7,
+        "cpu_max_pct": 0.9,
+        "arrivals": 0,
+        "late": 0,
+        "late_pct": 0.0,
+        "max_late_us": 0,
+        "dropped": 0
+      },
+      "ops": {
+        "imap.fetch": {
+          "count": 10000,
+          "errors": 0,
+          "error_rate": 0.0,
+          "throughput": 4713.61,
+          "mean": 166.4,
+          "min": 98,
+          "p50": 120,
+          "p90": 136,
+          "p95": 143,
+          "p99": 254,
+          "p999": 1513,
+          "max": 391167,
+          "histogram": "HISTFAAAATh4nC2Ov0tDMRDHc99cktfX9oGWtv5oERwFEXUQ6iBCB3FxEUdF3VycBAfHN7SLFIqii4v9G5yKiyjiIFJUOjg6OApKEXTw8tqQ5D73ve9dUoqbOaVoW/WXHkTy12uzpZY++8INIbSZqLKyenhFbZzpH33Bb+bD3tsnFwctVwt67to92GPbMQ3T5R6/6zt9qrvooIY/eqZveqQ2NehoM6adjfVqdW6qMjkyVigFthANh1EmY20QsmULZlgLDVksm0MNxUpI+RxSUSJgSNB4mxNQyEKz80pKBJUchTQMa/ZZCvmBxecanEp6WAunE4TEcsJ5P9NgVEChKA+5ZJQIRnw5kYpScv4nDjMYB25JCgZYxiIW8EuY5rJYZrGFXel8IezjCzghzOOScIAJca+hzqhncb6HfzXgMuE=",
+          "items": {
+            "count": 10000,
+            "sum": 10000,
+            "min": 1,
+            "max": 1,
+            "mean": 1.0
+          }
+        }
+      }
+    }
+  ],
+  "valid": true,
+  "best_step": null,
+  "best_rate": null
+}

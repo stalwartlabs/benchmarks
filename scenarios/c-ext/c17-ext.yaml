@@ -1,0 +1,33 @@
+id: c17-ext
+title: "Mixed IMAP workload capacity: mail-client-like sessions (login, select, sync, fetch new, read, flag, search, move, delete, logout), open loop of session arrivals, ladder extension above the c17 top step (1555.68 sessions/s)"
+family: imap
+mode: throughput
+targets: [stalwart]
+repetitions: 3
+cache: warm
+load_hosts: all
+dataset: c
+timeout: 60s
+slo:
+  p99: 500ms
+  max_error_rate: 0.001
+  labels: [mixed.login, mixed.select, mixed.sync, mixed.fetch_new, mixed.read, mixed.flag, mixed.search, mixed.move, mixed.delete, mixed.logout]
+load:
+  model: open
+  ladder: {start: 1555.68, factor: 1.4, steps: 8}
+  warmup: 60s
+  step_warmup: 10s
+  step_duration: 60s
+  stop_after_failures: 2
+users: {set: regular}
+op:
+  kind: imap-mixed
+  profile:
+    sync_window: 1000
+    fetch_new: 10
+    read_bodies: 2
+    flag_probability: 0.5
+    search_probability: 0.1
+    move_probability: 0.1
+    delete_probability: 0.05
+    search_ranks: [200, 5000]

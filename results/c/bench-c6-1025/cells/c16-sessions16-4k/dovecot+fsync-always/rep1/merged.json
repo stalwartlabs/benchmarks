@@ -1,0 +1,85 @@
+{
+  "schema": "mailbench/1",
+  "scenario": "c16",
+  "cell": "c16-sessions16-4k",
+  "family": "imap",
+  "mode": "latency",
+  "target": "dovecot",
+  "variant": "fsync-always",
+  "profile": "c-reduced",
+  "hosts": [
+    "load1"
+  ],
+  "shards": [
+    "0/1"
+  ],
+  "dataset": "c",
+  "seed": 20261025,
+  "started_at_ms": 1792983009001,
+  "finished_at_ms": 1792983073088,
+  "rtt_us": {
+    "mean": 1608.9,
+    "min": 524,
+    "p50": 956,
+    "p90": 2875,
+    "p95": 3509,
+    "p99": 6179,
+    "p999": 6179,
+    "max": 6179
+  },
+  "load": {
+    "max_duration": "1800s",
+    "model": "closed",
+    "samples": 10000,
+    "session_ops": 100,
+    "sessions": 16,
+    "think": "0s",
+    "warmup": "60s"
+  },
+  "slo": null,
+  "steps": [
+    {
+      "index": 0,
+      "target_rate": null,
+      "duration_s": 3.130814414,
+      "valid": true,
+      "slo_met": null,
+      "generator": {
+        "cpu_mean_pct": 0.5,
+        "cpu_max_pct": 0.6,
+        "arrivals": 0,
+        "late": 0,
+        "late_pct": 0.0,
+        "max_late_us": 0,
+        "dropped": 0
+      },
+      "ops": {
+        "imap.append": {
+          "count": 10015,
+          "errors": 0,
+          "error_rate": 0.0,
+          "throughput": 3198.85,
+          "mean": 2510.7,
+          "min": 749,
+          "p50": 1654,
+          "p90": 5415,
+          "p95": 7523,
+          "p99": 11191,
+          "p999": 16263,
+          "max": 21727,
+          "histogram": "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",
+          "items": {
+            "count": 10015,
+            "sum": 41281830,
+            "min": 4122,
+            "max": 4122,
+            "mean": 4122.0
+          }
+        }
+      }
+    }
+  ],
+  "valid": true,
+  "best_step": null,
+  "best_rate": null
+}

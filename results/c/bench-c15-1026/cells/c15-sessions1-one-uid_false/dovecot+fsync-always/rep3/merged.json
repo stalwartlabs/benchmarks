@@ -1,0 +1,85 @@
+{
+  "schema": "mailbench/1",
+  "scenario": "c15",
+  "cell": "c15-sessions1-one-uid_false",
+  "family": "imap",
+  "mode": "latency",
+  "target": "dovecot",
+  "variant": "fsync-always",
+  "profile": "c-reduced",
+  "hosts": [
+    "load1"
+  ],
+  "shards": [
+    "0/1"
+  ],
+  "dataset": "c",
+  "seed": 20261025,
+  "started_at_ms": 1793010247001,
+  "finished_at_ms": 1793010329016,
+  "rtt_us": {
+    "mean": 1358.2,
+    "min": 455,
+    "p50": 598,
+    "p90": 3885,
+    "p95": 4403,
+    "p99": 5763,
+    "p999": 5763,
+    "max": 5763
+  },
+  "load": {
+    "max_duration": "1800s",
+    "model": "closed",
+    "samples": 10000,
+    "session_ops": 100,
+    "sessions": 1,
+    "think": "0s",
+    "warmup": "60s"
+  },
+  "slo": null,
+  "steps": [
+    {
+      "index": 0,
+      "target_rate": null,
+      "duration_s": 22.015409353,
+      "valid": true,
+      "slo_met": null,
+      "generator": {
+        "cpu_mean_pct": 0.1,
+        "cpu_max_pct": 0.3,
+        "arrivals": 0,
+        "late": 0,
+        "late_pct": 0.0,
+        "max_late_us": 0,
+        "dropped": 0
+      },
+      "ops": {
+        "imap.expunge": {
+          "count": 10000,
+          "errors": 0,
+          "error_rate": 0.0,
+          "throughput": 454.23,
+          "mean": 877.3,
+          "min": 685,
+          "p50": 774,
+          "p90": 880,
+          "p95": 929,
+          "p99": 1088,
+          "p999": 2971,
+          "max": 650239,
+          "histogram": "HISTFAAAAhB4nC1RXWsTQRTde3cyTNN1nU6XJSzrumrwI5WgUrFg/SBoWFR88KHUD0rEIkFK0SCShyJSQkGxJTTSB5EoJagUEVERKVJEfPdNEX+BD4L/QM+0vXd3zr3nnnseZuJWZ9Bx+JazEe4mkj2+d3rOib8bxM8854RgltIznogCow/EpXjkeHV/ORs9f66e1evTk82JxizdvvGRlug5dalHi7RCq8hldK/pC31F9ZZeIm2/DGYV2KWH9AjKZ7RG7+kTLdBnqB7TK3RtuKxB06MPwDfYWIFLF7stuC/RE7rbpsYCHO7RA2q2qTlHM1NTM7UWXVmkm7M0R407k/XpWnZ9ojY2lp0ZvzSejVZPVSonKxeyveXhYmW4fKhYLOmRNCqkaZLsTJKwFCaBKaQ6ieMoCpKCNsnu2ISFIPWiUCtUodFB5AdxWFAetMaEaRyv00ngx0ZFWgdBEMJBG503ytee0to3vvQCbaTJe8qTvlJ5xUIpKSSrvAAgHFyzIx0pWLig2GWVwxx3r4Qjcko6rAQIkYNOuOwKh5ECBz6QwmrtDCMXgLlrbRBi/RFdu+vyoLSkK0HaXWxyv4UB0W8rm6CtZpD7AFv4GpB38RDv4w7xacAQH+R3DLoPom/EO/gY78HifcZ4K28DkWNxFcxZ/EchG+DL/JQw+0V8kecFv2D+Q/yb+Agf5vk8/6jyv+38H4J1ZGM=",
+          "items": {
+            "count": 10000,
+            "sum": 10000,
+            "min": 1,
+            "max": 1,
+            "mean": 1.0
+          }
+        }
+      }
+    }
+  ],
+  "valid": true,
+  "best_step": null,
+  "best_rate": null
+}

@@ -1,0 +1,16 @@
+id: c01-1m
+title: "SMTP inbound 1 MB messages: connect to 250 after DATA, port 25 STARTTLS"
+family: smtp-in
+mode: latency
+targets: [stalwart, dovecot]
+variants: [{target: dovecot, name: fsync-always}]
+repetitions: 3
+cache: warm
+load_hosts: 1
+dataset: c
+load: {model: closed, sessions: 1, warmup: 60s, samples: 1000, max_duration: 30m}
+users: {set: regular}
+op: {kind: smtp, port: smtp, recipients: 1, size: 1m}
+matrix:
+  load.sessions: [1, 16]
+  op.recipients: [1, 10]

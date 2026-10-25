@@ -1,0 +1,84 @@
+{
+  "schema": "mailbench/1",
+  "scenario": "l11-search-text-multi",
+  "cell": "l11-search-text-multi-large10k",
+  "family": "imap-large",
+  "mode": "latency",
+  "target": "stalwart",
+  "profile": "c-reduced",
+  "hosts": [
+    "load1"
+  ],
+  "shards": [
+    "0/1"
+  ],
+  "dataset": "c",
+  "seed": 20261025,
+  "started_at_ms": 1792986145001,
+  "finished_at_ms": 1792986175100,
+  "rtt_us": {
+    "mean": 3901.3,
+    "min": 635,
+    "p50": 2713,
+    "p90": 7479,
+    "p95": 7823,
+    "p99": 10527,
+    "p999": 10527,
+    "max": 10527
+  },
+  "load": {
+    "max_duration": "1200s",
+    "model": "closed",
+    "samples": 200,
+    "session_ops": 1000,
+    "sessions": 1,
+    "think": "0s",
+    "warmup": "30s"
+  },
+  "slo": null,
+  "steps": [
+    {
+      "index": 0,
+      "target_rate": null,
+      "duration_s": 0.098862857,
+      "valid": true,
+      "slo_met": null,
+      "generator": {
+        "cpu_mean_pct": 0.6,
+        "cpu_max_pct": 0.6,
+        "arrivals": 0,
+        "late": 0,
+        "late_pct": 0.0,
+        "max_late_us": 0,
+        "dropped": 0
+      },
+      "ops": {
+        "imap.search.text-multi": {
+          "count": 200,
+          "errors": 0,
+          "error_rate": 0.0,
+          "throughput": 2023.0,
+          "mean": 188.0,
+          "min": 162,
+          "p50": 184,
+          "p90": 209,
+          "p95": 214,
+          "p99": 240,
+          "p999": 277,
+          "max": 277,
+          "histogram": "HISTFAAAAFt4nC1L2wmAMBA70/OIcpaiv27ih58u5gZdwU3cwTkcwZaaQF6Q9cyLiBzSEH7vqjz5kv1tww0IgiodTk/JZy8aOVokje4GEDrSrCRAoawXTAil9hgKN3wuEAeI",
+          "items": {
+            "count": 200,
+            "sum": 24286,
+            "min": 15,
+            "max": 779,
+            "mean": 121.43
+          }
+        }
+      }
+    }
+  ],
+  "valid": true,
+  "best_step": null,
+  "best_rate": null
+}

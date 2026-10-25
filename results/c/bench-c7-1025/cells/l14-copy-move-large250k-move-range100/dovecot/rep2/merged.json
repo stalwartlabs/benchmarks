@@ -1,0 +1,84 @@
+{
+  "schema": "mailbench/1",
+  "scenario": "l14-copy-move",
+  "cell": "l14-copy-move-large250k-move-range100",
+  "family": "imap-large",
+  "mode": "latency",
+  "target": "dovecot",
+  "profile": "c-reduced",
+  "hosts": [
+    "load1"
+  ],
+  "shards": [
+    "0/1"
+  ],
+  "dataset": "c",
+  "seed": 20261025,
+  "started_at_ms": 1792993594001,
+  "finished_at_ms": 1792993677001,
+  "rtt_us": {
+    "mean": 3898.0,
+    "min": 695,
+    "p50": 2333,
+    "p90": 8215,
+    "p95": 9951,
+    "p99": 11287,
+    "p999": 11287,
+    "max": 11287
+  },
+  "load": {
+    "max_duration": "1200s",
+    "model": "closed",
+    "samples": 200,
+    "session_ops": 1000,
+    "sessions": 1,
+    "think": "0s",
+    "warmup": "30s"
+  },
+  "slo": null,
+  "steps": [
+    {
+      "index": 0,
+      "target_rate": null,
+      "duration_s": 52.995846888,
+      "valid": true,
+      "slo_met": null,
+      "generator": {
+        "cpu_mean_pct": 0.0,
+        "cpu_max_pct": 0.1,
+        "arrivals": 0,
+        "late": 0,
+        "late_pct": 0.0,
+        "max_late_us": 0,
+        "dropped": 0
+      },
+      "ops": {
+        "imap.move": {
+          "count": 200,
+          "errors": 0,
+          "error_rate": 0.0,
+          "throughput": 3.77,
+          "mean": 242952.9,
+          "min": 22752,
+          "p50": 199295,
+          "p90": 219391,
+          "p95": 224511,
+          "p99": 1079295,
+          "p999": 7643135,
+          "max": 7643135,
+          "histogram": "HISTFAAAAMd4nDWOsa0CMRBE957XZ51OX+jri08CVEADRIgmaIOAFuiACJGSUQAxFZAhIZqgBGbvDq/tWc/Mrne6P/yZVVPrVxqwiutxONvq3ROnDT/c5rwqdtxhzaVhywQTzy9Z0CAwksKUCRqdgnnLyAuM9QTvVfHK3YOzMGdSLTG2YbW4L08UR2OSWy0NDzWhxnQ286yyqMkKL/FHGLriHCPVkQar3fAd0mP80vXOnVQU7dBupCxc7eBI8o6ZCU9wbXn+s+S44AM0mxDA",
+          "items": {
+            "count": 200,
+            "sum": 20000,
+            "min": 100,
+            "max": 100,
+            "mean": 100.0
+          }
+        }
+      }
+    }
+  ],
+  "valid": true,
+  "best_step": null,
+  "best_rate": null
+}

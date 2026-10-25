@@ -1,0 +1,85 @@
+{
+  "schema": "mailbench/1",
+  "scenario": "c15",
+  "cell": "c15-sessions16-range100-uid_true",
+  "family": "imap",
+  "mode": "latency",
+  "target": "dovecot",
+  "variant": "fsync-always",
+  "profile": "c-reduced",
+  "hosts": [
+    "load1"
+  ],
+  "shards": [
+    "0/1"
+  ],
+  "dataset": "c",
+  "seed": 20261025,
+  "started_at_ms": 1793012341001,
+  "finished_at_ms": 1793012740463,
+  "rtt_us": {
+    "mean": 955.0,
+    "min": 474,
+    "p50": 571,
+    "p90": 1787,
+    "p95": 1893,
+    "p99": 5307,
+    "p999": 5307,
+    "max": 5307
+  },
+  "load": {
+    "max_duration": "1800s",
+    "model": "closed",
+    "samples": 10000,
+    "session_ops": 100,
+    "sessions": 16,
+    "think": "0s",
+    "warmup": "60s"
+  },
+  "slo": null,
+  "steps": [
+    {
+      "index": 0,
+      "target_rate": null,
+      "duration_s": 338.698343638,
+      "valid": true,
+      "slo_met": null,
+      "generator": {
+        "cpu_mean_pct": 0.3,
+        "cpu_max_pct": 0.5,
+        "arrivals": 0,
+        "late": 0,
+        "late_pct": 0.0,
+        "max_late_us": 0,
+        "dropped": 0
+      },
+      "ops": {
+        "imap.uid_expunge": {
+          "count": 10015,
+          "errors": 0,
+          "error_rate": 0.0,
+          "throughput": 29.57,
+          "mean": 256740.5,
+          "min": 10640,
+          "p50": 39999,
+          "p90": 1120255,
+          "p95": 1151999,
+          "p99": 1236991,
+          "p999": 1336319,
+          "max": 1599487,
+          "histogram": "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",
+          "items": {
+            "count": 10015,
+            "sum": 1001500,
+            "min": 100,
+            "max": 100,
+            "mean": 100.0
+          }
+        }
+      }
+    }
+  ],
+  "valid": true,
+  "best_step": null,
+  "best_rate": null
+}

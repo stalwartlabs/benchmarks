@@ -1,0 +1,21 @@
+id: c03
+title: "SMTP inbound sustained delivery throughput (open loop, corpus mix)"
+family: smtp-in
+mode: throughput
+targets: [stalwart, dovecot]
+variants: [{target: dovecot, name: fsync-always}]
+repetitions: 3
+cache: warm
+load_hosts: all
+dataset: c
+timeout: 30s
+slo: {p99: 1s, max_error_rate: 0.001, labels: [smtp]}
+load:
+  model: open
+  ladder: {start: 25, factor: 1.4, steps: 16}
+  warmup: 60s
+  step_warmup: 10s
+  step_duration: 60s
+  stop_after_failures: 2
+users: {set: regular}
+op: {kind: smtp, port: smtp, recipients: 1, size: mix, messages_per_connection: 1}

@@ -1,0 +1,11 @@
+[Unit]
+Description=rbldnsd DNSBL server for the benchmark lab
+After=network-online.target
+
+[Service]
+Type=simple
+ExecStart=/usr/sbin/rbldnsd -n -f -r /etc/rbldnsd -b 127.0.0.1/5353 ${RBLDNSD_ZONES}
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target

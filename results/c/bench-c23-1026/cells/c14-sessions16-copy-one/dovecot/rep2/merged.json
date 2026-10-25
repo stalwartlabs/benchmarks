@@ -1,0 +1,95 @@
+{
+  "schema": "mailbench/1",
+  "scenario": "c14",
+  "cell": "c14-sessions16-copy-one",
+  "family": "imap",
+  "mode": "latency",
+  "target": "dovecot",
+  "profile": "c-reduced",
+  "hosts": [
+    "load1"
+  ],
+  "shards": [
+    "0/1"
+  ],
+  "dataset": "c",
+  "seed": 20261025,
+  "started_at_ms": 1793013573001,
+  "finished_at_ms": 1793013650884,
+  "rtt_us": {
+    "mean": 2789.2,
+    "min": 603,
+    "p50": 1544,
+    "p90": 6027,
+    "p95": 6231,
+    "p99": 9615,
+    "p999": 9615,
+    "max": 9615
+  },
+  "load": {
+    "max_duration": "1800s",
+    "model": "closed",
+    "samples": 10000,
+    "session_ops": 100,
+    "sessions": 16,
+    "think": "0s",
+    "warmup": "60s"
+  },
+  "slo": null,
+  "steps": [
+    {
+      "index": 0,
+      "target_rate": null,
+      "duration_s": 17.880038599,
+      "valid": true,
+      "slo_met": null,
+      "generator": {
+        "cpu_mean_pct": 0.2,
+        "cpu_max_pct": 0.3,
+        "arrivals": 0,
+        "late": 0,
+        "late_pct": 0.0,
+        "max_late_us": 0,
+        "dropped": 0
+      },
+      "ops": {
+        "imap.copy": {
+          "count": 10002,
+          "errors": 13,
+          "error_rate": 0.0012980529206190715,
+          "throughput": 559.39,
+          "mean": 1098.5,
+          "min": 409,
+          "p50": 829,
+          "p90": 1853,
+          "p95": 2331,
+          "p99": 3673,
+          "p999": 10087,
+          "max": 44351,
+          "histogram": "HISTFAAABSx4nC1VsXIjRRAd97Zao/HceG48rJe9PSEW3SJURudyiSthXEBwRRUQXR0ZAQEfwE+QE1xAQAg/cMW/kPIJkJDzute2pNH2dPd7/bpnNPz85tK5VXXzX/OwnunHX2/+cF/8OxveCjm64gWtsDa0IGrwsGAmNkNDzA7fG2mIiAOxx+I8zNgQDvpIFCRyYLx8SPqf2Uefo0SEVCyxhBhTjjVJF2upqS+l60rXjjl36+0Yt9243QzTUHbDup1yOw43+2ncHe8P98Nh395u1vub6/X+uJ920343TeP1NN3tb25Px9Px8+7F8e50d3d9utvvj+N48/Kbw+n03eHFcdMfTsPt4XA9Hk/3h69ebl70t8MwItHtdbu/nsYvx12c+s12uNkAcLffb3dDHXd1nce+G9rrbtgepna9Wfd474b9sDlMdd/thu1212+6oQxduyldQgnrkvthnNqu5E07tmOdNuvqu7atY7+pg2/7uO5TX0suaS2ldrWWVEposZac9XvXdzWNKcTs2yg51ZxD6kL1tXQxpzalXFNt4dBLqjEVn9pYfYzcquYlwq10kseKmFAK8mAvdzFi1/uYRcTnkFs8azd8khBDDr4r3NcAXIETwRbbRKmEhIAkKcWARKWIa3PMrmbwjWCRYuaA+ITcUYRFYq6SQxdZog9BAjKU5IUwAr5iaACLF6YkRPEiIWtm8SGWCDcgesQIZ86uJRabplhEh0nzxQj2OaUUshYiyAc7x4gwpIMXVo4ecYnhDpGYtUwoAD+fkmfRcCwxOiQIHFQI8QAg5RUqjJAE+VBUQhn6nwIG3XtVHcOO6CApcGLBcZAojBqyVyeVC1J7cazHAQYm1IPqglohpzFG7gBUgXIh4qxBKvII8J4di0Ph5BNDUOB4BwiiDF7go/gMtqy7+IK3ELRUI5OKgGC244k/MheafQBASB1xbrHvWRsgYq1DuFOboBxUBxJaGJEr7CxboBDwKAprHDUrmqgh6A55F2FoFIA8ocPgSZrdO68stDYjhOqQH0xJ54VcQCS5iMxkqGiM8w5sRNVET5wYqJIjVXPOojUQUovDNaUvpHMB5EFATXotwQNlg7aVMrNwWlvUG4wD/HhJQX0bu/BYrzgvphwiG40gcYoK0qKI8AmkG4jSYnAxYi/OWHpPkhHSHjZahG2AAln6uRK9WnVjDtALFZosVDmkd7oHdy+WRzkCQ7EV3TcyX7gaI7ZpqwJzMwsBJ1KB4LUM6qEOWqB6NKagBonq4jWr1ygtZ/4JYGOx1B12M0VsoLuqI84MlIOIOq6ixSR8E7KqMMl+7vJcdKOs0UWtI9ocgY0eCQtUGeDr0TLQiEZdBxOfqs2sfjNXI/MsI2CFtsyj+aCOenFjTA3A8piWGEOLYloCcCH2k2YqsDWJ7Byw/qRpZpWgMe1R8IIXShYkaB5A7ZFlnquws4Dtx0ikngvjCqoa0cxApt/CflNViKVyXtmEIF6tMK3Mc2GTqN+U2wz9MBAPPZ2RSR6ph8VKY7mbGdeR7qweEGBUxAsAmI+StE91XYmCL02op+bOGu00qdI4f/BeytJYXxA/xuOVVrcysudYL418M8NZpRe2w+b6DAnfpyewXNmBWGEXsU8QdoHHd+kjQGuJeHwKEZ/AG6RXMwu1v0cfKOCH9A59AqgGBiyPiJ7T1wScS36GNIp4SR/Ta35Nv54pwCu4f49s54j/BZZXSPGnRj1H0k/pB7x/BM4V3L6lz+jvM/rnnH4j+onentHvDf0X6H8rGWaD",
+          "items": {
+            "count": 10002,
+            "sum": 10002,
+            "min": 1,
+            "max": 1,
+            "mean": 1.0
+          },
+          "error_kinds": {
+            "io": 1,
+            "rejected": 12
+          },
+          "error_samples": [
+            "DELETE rejected: A219 NO New mails were added to mailbox during deletion (0.063 + 0.000 + 0.062 secs).",
+            "DELETE rejected: A309 NO New mails were added to mailbox during deletion (0.047 + 0.000 + 0.046 secs).",
+            "I/O error: connection closed by server",
+            "COPY rejected: A332 NO [TRYCREATE] Mailbox doesn't exist: BenchTarget (0.001 + 0.000 secs).",
+            "COPY rejected: A342 NO [TRYCREATE] Mailbox doesn't exist: BenchTarget (0.001 + 0.000 secs)."
+          ]
+        }
+      }
+    }
+  ],
+  "valid": true,
+  "best_step": null,
+  "best_rate": null
+}

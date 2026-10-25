@@ -1,0 +1,93 @@
+{
+  "schema": "mailbench/1",
+  "scenario": "c14",
+  "cell": "c14-sessions16-copy-one",
+  "family": "imap",
+  "mode": "latency",
+  "target": "dovecot",
+  "variant": "fsync-always",
+  "profile": "c-reduced",
+  "hosts": [
+    "load1"
+  ],
+  "shards": [
+    "0/1"
+  ],
+  "dataset": "c",
+  "seed": 20261025,
+  "started_at_ms": 1793013955001,
+  "finished_at_ms": 1793014030962,
+  "rtt_us": {
+    "mean": 4362.8,
+    "min": 626,
+    "p50": 3261,
+    "p90": 9863,
+    "p95": 9935,
+    "p99": 14359,
+    "p999": 14359,
+    "max": 14359
+  },
+  "load": {
+    "max_duration": "1800s",
+    "model": "closed",
+    "samples": 10000,
+    "session_ops": 100,
+    "sessions": 16,
+    "think": "0s",
+    "warmup": "60s"
+  },
+  "slo": null,
+  "steps": [
+    {
+      "index": 0,
+      "target_rate": null,
+      "duration_s": 15.960487345,
+      "valid": true,
+      "slo_met": null,
+      "generator": {
+        "cpu_mean_pct": 0.2,
+        "cpu_max_pct": 0.4,
+        "arrivals": 0,
+        "late": 0,
+        "late_pct": 0.0,
+        "max_late_us": 0,
+        "dropped": 0
+      },
+      "ops": {
+        "imap.copy": {
+          "count": 10004,
+          "errors": 3,
+          "error_rate": 0.00029979014689717197,
+          "throughput": 626.8,
+          "mean": 3949.6,
+          "min": 1000,
+          "p50": 3687,
+          "p90": 6179,
+          "p95": 7023,
+          "p99": 8895,
+          "p999": 15271,
+          "max": 18223,
+          "histogram": "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",
+          "items": {
+            "count": 10004,
+            "sum": 10004,
+            "min": 1,
+            "max": 1,
+            "mean": 1.0
+          },
+          "error_kinds": {
+            "rejected": 3
+          },
+          "error_samples": [
+            "COPY rejected: A457 NO [TRYCREATE] Mailbox doesn't exist: BenchTarget (0.001 + 0.000 secs).",
+            "COPY rejected: A347 NO [TRYCREATE] Mailbox doesn't exist: BenchTarget (0.001 + 0.000 secs).",
+            "COPY rejected: A442 NO [TRYCREATE] Mailbox doesn't exist: BenchTarget (0.001 + 0.000 secs)."
+          ]
+        }
+      }
+    }
+  ],
+  "valid": true,
+  "best_step": null,
+  "best_rate": null
+}

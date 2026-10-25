@@ -1,0 +1,18 @@
+id: l10-fetch-body-cold
+title: "Large mailboxes: FETCH BODY.PEEK[] per size bucket (cold cache)"
+family: imap-large
+mode: latency
+targets: [stalwart, dovecot]
+variants: [{target: dovecot, name: fsync-always}]
+repetitions: 5
+cache: cold
+cold_open: true
+load_hosts: 1
+dataset: c
+timeout: 600s
+load: {model: closed, sessions: 1, warmup: 0s, samples: 20, max_duration: 20m, session_ops: 1000}
+users: {set: large, account: large10k}
+op: {kind: imap-fetch, fetch: body-bucket, bucket: 4k}
+matrix:
+  users.account: [large10k, large100k, large250k]
+  op.bucket: [4k, 64k, 1m]

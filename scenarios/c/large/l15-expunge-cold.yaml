@@ -1,0 +1,19 @@
+id: l15-expunge-cold
+title: "Large mailboxes: EXPUNGE and UID EXPUNGE of 1, 100 and 10% of INBOX (cold cache)"
+family: imap-large
+mode: latency
+targets: [stalwart, dovecot]
+variants: [{target: dovecot, name: fsync-always}]
+repetitions: 5
+cache: cold
+cold_open: true
+load_hosts: 1
+dataset: c
+timeout: 600s
+load: {model: closed, sessions: 1, warmup: 0s, samples: 20, max_duration: 20m, session_ops: 1000}
+users: {set: large, account: large10k}
+op: {kind: imap-expunge, range: one, uid: false}
+matrix:
+  users.account: [large10k, large100k, large250k]
+  op.range: [one, 100, 10%]
+  op.uid: [false, true]

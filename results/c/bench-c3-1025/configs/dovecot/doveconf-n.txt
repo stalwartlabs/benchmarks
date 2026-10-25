@@ -1,0 +1,116 @@
+# 2.4.5-2+ubuntu24.04 (0cbb641e3e): /etc/dovecot/dovecot.conf
+# OS: Linux 7.0.0-1017-azure x86_64 Ubuntu 24.04.5 LTS 
+# Hostname: dovecot
+dovecot_config_version = 2.4.5
+auth_cache_negative_ttl = 1 hour
+auth_cache_size = 16M
+auth_cache_ttl = 1 hour
+auth_mechanisms = plain login
+dovecot_storage_version = 2.4.5
+first_valid_uid = 100
+fts_autoindex = yes
+fts_header_excludes {
+  * = yes
+}
+fts_header_includes {
+  From = yes
+  To = yes
+  Cc = yes
+  Bcc = yes
+  Subject = yes
+}
+info_log_path = /var/log/dovecot.log
+language_filters = lowercase stopwords snowball
+language_tokenizers = generic email-address
+listen = *
+log_path = /var/log/dovecot.log
+mail_always_cache_fields = flags date.received date.sent size.virtual imap.envelope imap.bodystructure hdr.from hdr.to hdr.cc hdr.subject hdr.message-id hdr.in-reply-to hdr.references
+mail_driver = mdbox
+mail_fsync = never
+mail_gid = vmail
+mail_home = /mnt/data/dovecot/mail/%{user | domain}/%{user | username}
+mail_path = ~/mdbox
+mail_plugins {
+  fts = yes
+  fts_flatcurve = yes
+}
+mail_uid = vmail
+protocols = imap lmtp
+ssl = required
+ssl_cipher_suites = TLS_AES_256_GCM_SHA384
+ssl_curve_list = X25519
+ssl_min_protocol = TLSv1.3
+namespace inbox {
+  inbox = yes
+  separator = /
+  mailbox Drafts {
+    auto = subscribe
+    special_use = "\\Drafts"
+  }
+  mailbox Sent {
+    auto = subscribe
+    special_use = "\\Sent"
+  }
+  mailbox Archive {
+    auto = subscribe
+    special_use = "\\Archive"
+  }
+  mailbox Junk {
+    auto = subscribe
+    special_use = "\\Junk"
+  }
+  mailbox Trash {
+    auto = subscribe
+    special_use = "\\Trash"
+  }
+}
+passdb passwd-file {
+  passwd_file_path = /mnt/data/dovecot/users
+}
+userdb passwd-file {
+  passwd_file_path = /mnt/data/dovecot/users
+}
+ssl_server {
+  cert_file = /etc/dovecot/tls/cert.pem
+  key_file = # hidden, use -P to show it
+  prefer_ciphers = server
+}
+fts flatcurve {
+}
+language en {
+  default = yes
+}
+protocol imap {
+  mail_max_userip_connections = 1000
+}
+service imap-login {
+  client_limit = 8192
+  process_min_avail = 8
+  restart_request_count = unlimited
+  vsz_limit = 1G
+  inet_listener imap {
+    port = 0
+  }
+  inet_listener imaps {
+    port = 993
+    ssl = yes
+  }
+}
+service imap {
+  process_limit = 8192
+}
+service lmtp {
+  process_min_avail = 25
+  unix_listener /mnt/data/postfix/spool/private/dovecot-lmtp {
+    group = postfix
+    mode = 0600
+    user = postfix
+  }
+}
+service auth {
+  unix_listener /mnt/data/postfix/spool/private/auth {
+    group = postfix
+    mode = 0660
+    user = postfix
+  }
+}

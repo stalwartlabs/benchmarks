@@ -1,0 +1,84 @@
+{
+  "schema": "mailbench/1",
+  "scenario": "c09",
+  "cell": "c09-sessions1-qresync_changes100",
+  "family": "imap",
+  "mode": "latency",
+  "target": "dovecot",
+  "profile": "c-reduced",
+  "hosts": [
+    "load1"
+  ],
+  "shards": [
+    "0/1"
+  ],
+  "dataset": "c",
+  "seed": 20261025,
+  "started_at_ms": 1793020855826,
+  "finished_at_ms": 1793020922501,
+  "rtt_us": {
+    "mean": 1356.6,
+    "min": 573,
+    "p50": 679,
+    "p90": 1525,
+    "p95": 3635,
+    "p99": 8327,
+    "p999": 8327,
+    "max": 8327
+  },
+  "load": {
+    "max_duration": "1800s",
+    "model": "closed",
+    "samples": 10000,
+    "session_ops": 100,
+    "sessions": 1,
+    "think": "0s",
+    "warmup": "60s"
+  },
+  "slo": null,
+  "steps": [
+    {
+      "index": 0,
+      "target_rate": null,
+      "duration_s": 6.674676283,
+      "valid": true,
+      "slo_met": null,
+      "generator": {
+        "cpu_mean_pct": 0.7,
+        "cpu_max_pct": 0.8,
+        "arrivals": 0,
+        "late": 0,
+        "late_pct": 0.0,
+        "max_late_us": 0,
+        "dropped": 0
+      },
+      "ops": {
+        "imap.select_qresync": {
+          "count": 10000,
+          "errors": 0,
+          "error_rate": 0.0,
+          "throughput": 1498.2,
+          "mean": 202.2,
+          "min": 120,
+          "p50": 199,
+          "p90": 237,
+          "p95": 262,
+          "p99": 438,
+          "p999": 528,
+          "max": 550,
+          "histogram": "HISTFAAAAW94nC2OsUtCURTG7/3u9fp6yCtMRORhIiIiEiIiDVLi8JAGhxCRcHBokIgIh2hoiIgGkRAVcogGiQj/goaGhsZwaGhqaoyohubo3KfnXO45fN85v3vts8EyY/ySzULMK9fX6+CGbfzMhG8OhPNH7cZeaS0SChumFfD7fFE7bcXTrVWn3HS2anknVy4WS7VK1antbldb+weHzeMOH/E7fs7HfEg54Q98yju4wjX6+MVQ3KMnvnAq3jASfcon0RVD8Yl3/JH6gQvxgmfcYoIxerQz5Y9EmRCzy9snBK7vNBv1zfVCpZh1CoVMrhRPp5KxaCqRTsTC2UQuE0nG7FDCjibtSDiYClohvz+wJP2WYRlm0PSZ5pJpWJKqYoASoBCUy1jBolReCaEk0xqDhzxJArBADQkky7nO3CP1LPmSKaHAFJQeFCAMkxohXNACvPSaZASbTehgkuAet5XaUyY8LkAbhpIuiJZn6dVf+gdBx0C4",
+          "items": {
+            "count": 10000,
+            "sum": 741668,
+            "min": 0,
+            "max": 100,
+            "mean": 74.1668
+          }
+        }
+      }
+    }
+  ],
+  "valid": true,
+  "best_step": null,
+  "best_rate": null
+}

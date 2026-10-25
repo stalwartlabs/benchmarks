@@ -1,0 +1,12 @@
+postfix = postfix_settings
+
+[postfix_settings]
+ssl_conf = postfix_ssl_settings
+
+[postfix_ssl_settings]
+system_default = postfix_tls_defaults
+
+[postfix_tls_defaults]
+MinProtocol = TLSv1.3
+Ciphersuites = TLS_AES_256_GCM_SHA384
+Groups = X25519

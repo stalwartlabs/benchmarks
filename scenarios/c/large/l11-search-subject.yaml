@@ -1,0 +1,16 @@
+id: l11-search-subject
+title: "Large mailboxes: SEARCH SUBJECT word rank 50 to 500 (warm cache)"
+family: imap-large
+mode: latency
+targets: [stalwart, dovecot]
+variants: [{target: dovecot, name: fsync-always}]
+repetitions: 3
+cache: warm
+load_hosts: 1
+dataset: c
+timeout: 600s
+load: {model: closed, sessions: 1, warmup: 30s, samples: 200, max_duration: 20m, session_ops: 1000}
+users: {set: large, account: large10k}
+op: {kind: imap-search, label: imap.search.subject, criteria: 'SUBJECT "{word:50-500}"'}
+matrix:
+  users.account: [large10k, large100k, large250k]

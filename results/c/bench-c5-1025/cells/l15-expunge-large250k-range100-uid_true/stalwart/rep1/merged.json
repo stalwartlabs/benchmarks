@@ -1,0 +1,84 @@
+{
+  "schema": "mailbench/1",
+  "scenario": "l15-expunge",
+  "cell": "l15-expunge-large250k-range100-uid_true",
+  "family": "imap-large",
+  "mode": "latency",
+  "target": "stalwart",
+  "profile": "c-reduced",
+  "hosts": [
+    "load1"
+  ],
+  "shards": [
+    "0/1"
+  ],
+  "dataset": "c",
+  "seed": 20261025,
+  "started_at_ms": 1792998387001,
+  "finished_at_ms": 1792998431445,
+  "rtt_us": {
+    "mean": 3422.8,
+    "min": 564,
+    "p50": 897,
+    "p90": 10775,
+    "p95": 12295,
+    "p99": 19983,
+    "p999": 19983,
+    "max": 19983
+  },
+  "load": {
+    "max_duration": "1200s",
+    "model": "closed",
+    "samples": 200,
+    "session_ops": 1000,
+    "sessions": 1,
+    "think": "0s",
+    "warmup": "30s"
+  },
+  "slo": null,
+  "steps": [
+    {
+      "index": 0,
+      "target_rate": null,
+      "duration_s": 14.444245013,
+      "valid": true,
+      "slo_met": null,
+      "generator": {
+        "cpu_mean_pct": 0.2,
+        "cpu_max_pct": 0.3,
+        "arrivals": 0,
+        "late": 0,
+        "late_pct": 0.0,
+        "max_late_us": 0,
+        "dropped": 0
+      },
+      "ops": {
+        "imap.uid_expunge": {
+          "count": 200,
+          "errors": 0,
+          "error_rate": 0.0,
+          "throughput": 13.85,
+          "mean": 1487.6,
+          "min": 1166,
+          "p50": 1286,
+          "p90": 2003,
+          "p95": 2107,
+          "p99": 2343,
+          "p999": 2745,
+          "max": 2745,
+          "histogram": "HISTFAAAAMR4nC1OyQ3CMBDcjDd2oihCIYoggg/KA0WIF+KNEBVQANVAB3nypQv6oA5KYNbGqz08Mzv2+jG1ItlS0nH/nln5TC85fRPwnEOQA6JBrTo4NoZViFdikMIDngn1UFN4pYapxoe0wFnTnjmGZJSzucKuNhCoOeaM2oBOG3QYCfeILrpCacSCQM9aoqVghwFn3FDhbmSOI7bRzOw2ZoWGpEum5mBUwCyKBsRP1TGCHoyPkoYPVCBYMfZUj8QvuOIN/AA55g2p",
+          "items": {
+            "count": 200,
+            "sum": 20000,
+            "min": 100,
+            "max": 100,
+            "mean": 100.0
+          }
+        }
+      }
+    }
+  ],
+  "valid": true,
+  "best_step": null,
+  "best_rate": null
+}

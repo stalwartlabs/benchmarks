@@ -1,0 +1,84 @@
+{
+  "schema": "mailbench/1",
+  "scenario": "l11-search-body-common",
+  "cell": "l11-search-body-common-large10k",
+  "family": "imap-large",
+  "mode": "latency",
+  "target": "dovecot",
+  "profile": "c-reduced",
+  "hosts": [
+    "load1"
+  ],
+  "shards": [
+    "0/1"
+  ],
+  "dataset": "c",
+  "seed": 20261025,
+  "started_at_ms": 1792982475002,
+  "finished_at_ms": 1792982505826,
+  "rtt_us": {
+    "mean": 7546.2,
+    "min": 619,
+    "p50": 5823,
+    "p90": 14095,
+    "p95": 18991,
+    "p99": 22367,
+    "p999": 22367,
+    "max": 22367
+  },
+  "load": {
+    "max_duration": "1200s",
+    "model": "closed",
+    "samples": 200,
+    "session_ops": 1000,
+    "sessions": 1,
+    "think": "0s",
+    "warmup": "30s"
+  },
+  "slo": null,
+  "steps": [
+    {
+      "index": 0,
+      "target_rate": null,
+      "duration_s": 0.824117248,
+      "valid": true,
+      "slo_met": null,
+      "generator": {
+        "cpu_mean_pct": 0.1,
+        "cpu_max_pct": 0.1,
+        "arrivals": 0,
+        "late": 0,
+        "late_pct": 0.0,
+        "max_late_us": 0,
+        "dropped": 0
+      },
+      "ops": {
+        "imap.search.body-common": {
+          "count": 200,
+          "errors": 0,
+          "error_rate": 0.0,
+          "throughput": 242.68,
+          "mean": 3500.0,
+          "min": 2784,
+          "p50": 3391,
+          "p90": 4199,
+          "p95": 4335,
+          "p99": 4471,
+          "p999": 4527,
+          "max": 4527,
+          "histogram": "HISTFAAAAL14nC1PwQ3CMAxMz26jKKoqFFUVEogXI/BmOTboCszElxUYgTunTXRx7+yzfXntLaXhkfpnxzsIPvs7PX+d+N5xRkFFwgyCedZhlHwWYqRowJSFPakwbIAyjeEYR/SJNCuc0G8BHS18pqBkEhWOOnmvSuyQyRkWIu/KsEDt6Sh9oe5EV2KBRpljYophH65aQh0bhQymrywnr6muqq3AhljJYod8jEY+48YCxDq+gQJfRV3kb3Ua1dj8D12dC04=",
+          "items": {
+            "count": 200,
+            "sum": 710987,
+            "min": 2378,
+            "max": 5433,
+            "mean": 3554.935
+          }
+        }
+      }
+    }
+  ],
+  "valid": true,
+  "best_step": null,
+  "best_rate": null
+}

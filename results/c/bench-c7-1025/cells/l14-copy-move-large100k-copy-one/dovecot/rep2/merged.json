@@ -1,0 +1,94 @@
+{
+  "schema": "mailbench/1",
+  "scenario": "l14-copy-move",
+  "cell": "l14-copy-move-large100k-copy-one",
+  "family": "imap-large",
+  "mode": "latency",
+  "target": "dovecot",
+  "profile": "c-reduced",
+  "hosts": [
+    "load1"
+  ],
+  "shards": [
+    "0/1"
+  ],
+  "dataset": "c",
+  "seed": 20261025,
+  "started_at_ms": 1792982668001,
+  "finished_at_ms": 1792982709246,
+  "rtt_us": {
+    "mean": 4404.3,
+    "min": 676,
+    "p50": 2587,
+    "p90": 8975,
+    "p95": 9495,
+    "p99": 13447,
+    "p999": 13447,
+    "max": 13447
+  },
+  "load": {
+    "max_duration": "1200s",
+    "model": "closed",
+    "samples": 200,
+    "session_ops": 1000,
+    "sessions": 1,
+    "think": "0s",
+    "warmup": "30s"
+  },
+  "slo": null,
+  "steps": [
+    {
+      "index": 0,
+      "target_rate": null,
+      "duration_s": 11.244998777,
+      "valid": true,
+      "slo_met": null,
+      "generator": {
+        "cpu_mean_pct": 0.0,
+        "cpu_max_pct": 0.1,
+        "arrivals": 0,
+        "late": 0,
+        "late_pct": 0.0,
+        "max_late_us": 0,
+        "dropped": 0
+      },
+      "ops": {
+        "imap.copy": {
+          "count": 200,
+          "errors": 5,
+          "error_rate": 0.024390243902439025,
+          "throughput": 17.79,
+          "mean": 500.7,
+          "min": 349,
+          "p50": 423,
+          "p90": 672,
+          "p95": 1071,
+          "p99": 1724,
+          "p999": 1755,
+          "max": 1755,
+          "histogram": "HISTFAAAAKZ4nC2Muw3CQBBE1+8+nLEMshw4gJSIACFiRB2Ug4REAW6BFgjoA5HRAx3A+Oxb7e/Nzq2vfWtmLxufm3oxlHd/t9N3BM8AGI6kGrw3fNQaI5F5YpFVzAvnMeGTjgSmlKqWYkIOj4wDJ5pCo2MMZvl/aY6SoDVoqrLWIdTS6KKiZqWtUW4pfSkSlJ3O5OdSsOcAO24FH0TY8Cj4Rc4sOcpU8wcW1g5M",
+          "items": {
+            "count": 200,
+            "sum": 200,
+            "min": 1,
+            "max": 1,
+            "mean": 1.0
+          },
+          "error_kinds": {
+            "rejected": 5
+          },
+          "error_samples": [
+            "DELETE rejected: A329 NO New mails were added to mailbox during deletion (1.685 + 0.000 + 1.684 secs).",
+            "DELETE rejected: A329 NO New mails were added to mailbox during deletion (1.681 + 0.000 + 1.680 secs).",
+            "DELETE rejected: A109 NO New mails were added to mailbox during deletion (1.702 + 0.000 + 1.701 secs).",
+            "DELETE rejected: A59 NO New mails were added to mailbox during deletion (1.696 + 0.000 + 1.695 secs).",
+            "DELETE rejected: A149 NO New mails were added to mailbox during deletion (1.657 + 0.000 + 1.656 secs)."
+          ]
+        }
+      }
+    }
+  ],
+  "valid": true,
+  "best_step": null,
+  "best_rate": null
+}

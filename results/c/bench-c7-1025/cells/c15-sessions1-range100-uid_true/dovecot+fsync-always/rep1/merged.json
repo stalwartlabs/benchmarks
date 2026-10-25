@@ -1,0 +1,85 @@
+{
+  "schema": "mailbench/1",
+  "scenario": "c15",
+  "cell": "c15-sessions1-range100-uid_true",
+  "family": "imap",
+  "mode": "latency",
+  "target": "dovecot",
+  "variant": "fsync-always",
+  "profile": "c-reduced",
+  "hosts": [
+    "load1"
+  ],
+  "shards": [
+    "0/1"
+  ],
+  "dataset": "c",
+  "seed": 20261025,
+  "started_at_ms": 1793005206000,
+  "finished_at_ms": 1793007066682,
+  "rtt_us": {
+    "mean": 6132.4,
+    "min": 624,
+    "p50": 3757,
+    "p90": 12591,
+    "p95": 18223,
+    "p99": 34687,
+    "p999": 34687,
+    "max": 34687
+  },
+  "load": {
+    "max_duration": "1800s",
+    "model": "closed",
+    "samples": 10000,
+    "session_ops": 100,
+    "sessions": 1,
+    "think": "0s",
+    "warmup": "60s"
+  },
+  "slo": null,
+  "steps": [
+    {
+      "index": 0,
+      "target_rate": null,
+      "duration_s": 1800.019977813,
+      "valid": true,
+      "slo_met": null,
+      "generator": {
+        "cpu_mean_pct": 0.0,
+        "cpu_max_pct": 0.2,
+        "arrivals": 0,
+        "late": 0,
+        "late_pct": 0.0,
+        "max_late_us": 0,
+        "dropped": 0
+      },
+      "ops": {
+        "imap.uid_expunge": {
+          "count": 1819,
+          "errors": 0,
+          "error_rate": 0.0,
+          "throughput": 1.01,
+          "mean": 917746.7,
+          "min": 10880,
+          "p50": 1043455,
+          "p90": 1059839,
+          "p95": 1080319,
+          "p99": 1096703,
+          "p999": 1107967,
+          "max": 1113087,
+          "histogram": "HISTFAAAAWd4nC1QuU4CURR9c94yCwwjjAaMYuIoLoQgxkjIBAWJGGMojFZaGBMbf8FaGwsrOhsbG2s/xcTWX/AP9LwZ3s1d3r3nrstP01gI50fkT860Y8X39F0MfnPH2xgRqtBYI2+jgFXEaKgYLy4WsATBsE+O4Cr7kyRf0aUEYCCU1UIxYp+xfxJdsxDZVczJnwuadaoPyUYEVRGyDY0BAyHu2HzMQcq0Y6ZawB7hi7gib3KKfZJFR0RIosOsqFYFKmkLZZNEShMh7RSkGCzILj5JGJdb1enlVsq3cJ2LOj32CCirKlMbLGrXpVfzLDGOsEMrtNsK1pNsGNJhx3ZJBWQddRbSpF3m2Bs+4NnBp4MvjUv8AY8HCl6pVDRB0Rg1V0nWk1633R21hslGu9c87bdG6fnk7OTmOL1I7zuHnVfndnKd9ofNXrKyVZuvlALP4x7ZbZUnWMgEQc1QVEQQ8PgGSnkyO/c/vJsjCQ==",
+          "items": {
+            "count": 1819,
+            "sum": 181900,
+            "min": 100,
+            "max": 100,
+            "mean": 100.0
+          }
+        }
+      }
+    }
+  ],
+  "valid": true,
+  "best_step": null,
+  "best_rate": null
+}

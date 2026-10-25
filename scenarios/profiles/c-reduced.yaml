@@ -1,0 +1,52 @@
+id: c-reduced
+rules:
+  - match: ["c02-idle-*"]
+    exclude: true
+  - match: ["c02-idle-sessions1-recipients1-4k"]
+    exclude: false
+    set: {repetitions: 1, load.samples: 500}
+  - match: ["c07-*", "c08-*", "c09-*", "c10-*", "c11-*", "c12-*", "l*"]
+    set: {variants: []}
+  - match: ["l*"]
+    set: {repetitions: 2}
+  - match: ["l*-10p*"]
+    set: {load.samples: 50}
+  - match: ["l*-cold-*"]
+    exclude: true
+    set: {repetitions: 10, load.samples: 1}
+  - match: ["l09-select-cold-*", "l10-fetch-cold-*-flags_all", "l11-search-body-common-cold-*", "l12-sort-cold-*-date", "l13-store-cold-*"]
+    exclude: false
+groups:
+  - {name: c13-c13, match: ["c13-sessions16-_seen-all", "c13-sessions16-_flagged-one", "c13-sessions16-_flagged-range100", "c13-sessions16-_flagged-all"]}
+  - {name: c14-c4, match: ["c14-sessions16-move-10p"]}
+  - {name: c01-late, match: ["c01-sessions1-recipients10-64k"]}
+  - {name: c05-c14, match: ["c05-sessions1-64k"]}
+  - {name: c05-mix-c5, match: ["c05-sessions16-mix"]}
+  - {name: c05-c8, match: ["c05-sessions16-*"]}
+  - {name: c14-c9, match: ["c14-sessions16-move-one"]}
+  - {name: c14-c23, match: ["c14-sessions16-copy-one", "c14-sessions16-copy-range100"]}
+  - {name: c14-c13, match: ["c14-sessions16-copy-10p"]}
+  - {name: c14-split, match: ["c14-sessions16-move-range100"]}
+  - {name: c02-c13, match: ["c02-sessions1-recipients10-64k"]}
+  - {name: c18, match: ["c02-sessions16-recipients10-*"]}
+  - {name: c14, match: ["c11-date-*", "c11-from-*", "c11-subject-*"]}
+  - {name: c12, match: ["c14-sessions1-move-10p"]}
+  - {name: c13, match: ["c02-sessions16-*", "c02-sessions1-recipients10-mix"]}
+  - {name: c23, match: ["c15-sessions1-range100-uid_false", "c15-sessions16-one-*"]}
+  - {name: c15-c7, match: ["c15-sessions1-one-uid_true", "c15-sessions1-range100-uid_true"]}
+  - {name: c15-c3, match: ["c15-sessions1-10p-uid_false"]}
+  - {name: c15-c19, match: ["c15-sessions16-10p-uid_true"]}
+  - {name: c15-c14, match: ["c15-sessions1-10p-uid_true", "c15-sessions16-10p-uid_false"]}
+  - {name: c15-c2, match: ["c15-sessions16-range100-uid_false"]}
+  - {name: c15-c10, match: ["c15-sessions16-range100-uid_true", "c15-sessions1-one-uid_false"]}
+  - {name: c8, match: ["l*-cold-*", "c15-*", "c12-*"]}
+  - {name: c9, match: ["c11-*", "c06"]}
+  - {name: c10, match: ["c03", "c01-sessions1-recipients10-4k", "c01-sessions16-recipients10-*"]}
+  - {name: c11, match: ["c03-mpc10", "c01-sessions1-recipients10-64k", "c01-sessions16-recipients1-*"]}
+  - {name: c1, match: ["c01-*", "c05-*"]}
+  - {name: c2, match: ["c02-*"]}
+  - {name: c3, match: ["c04-*", "c07-*", "c08-*", "c09-*", "c10-*", "c13-*", "c14-sessions16-move-10p"]}
+  - {name: c4, match: ["c14-*"]}
+  - {name: c5, match: ["l09-*", "l10-*", "l11-*", "l15-expunge-*-range100-*", "l15-expunge-*-10p-*"]}
+  - {name: c6, match: ["c16-*", "l12-*", "l13-*", "c17"]}
+  - {name: c7, match: ["l14-*", "l15-*"]}

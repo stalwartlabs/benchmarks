@@ -1,0 +1,84 @@
+{
+  "schema": "mailbench/1",
+  "scenario": "l14-copy-move",
+  "cell": "l14-copy-move-large100k-move-one",
+  "family": "imap-large",
+  "mode": "latency",
+  "target": "dovecot",
+  "profile": "c-reduced",
+  "hosts": [
+    "load1"
+  ],
+  "shards": [
+    "0/1"
+  ],
+  "dataset": "c",
+  "seed": 20261025,
+  "started_at_ms": 1792983424001,
+  "finished_at_ms": 1792983462419,
+  "rtt_us": {
+    "mean": 4055.3,
+    "min": 735,
+    "p50": 3273,
+    "p90": 6275,
+    "p95": 11103,
+    "p99": 11719,
+    "p999": 11719,
+    "max": 11719
+  },
+  "load": {
+    "max_duration": "1200s",
+    "model": "closed",
+    "samples": 200,
+    "session_ops": 1000,
+    "sessions": 1,
+    "think": "0s",
+    "warmup": "30s"
+  },
+  "slo": null,
+  "steps": [
+    {
+      "index": 0,
+      "target_rate": null,
+      "duration_s": 8.418202017,
+      "valid": true,
+      "slo_met": null,
+      "generator": {
+        "cpu_mean_pct": 0.0,
+        "cpu_max_pct": 0.1,
+        "arrivals": 0,
+        "late": 0,
+        "late_pct": 0.0,
+        "max_late_us": 0,
+        "dropped": 0
+      },
+      "ops": {
+        "imap.move": {
+          "count": 200,
+          "errors": 0,
+          "error_rate": 0.0,
+          "throughput": 23.76,
+          "mean": 39561.4,
+          "min": 3832,
+          "p50": 8423,
+          "p90": 14607,
+          "p95": 18735,
+          "p99": 1007615,
+          "p999": 1008639,
+          "max": 1008639,
+          "histogram": "HISTFAAAAQl4nC2QQUoDMRiFk5eEEIYwlEGGMkoRqVJKFy4GlyLiAcRLeA3BnQsXvYLgAcSVC2/hOdx10U2/ZDqZyf/y8v6XNzl93XbG2GczPe5YbZn+th/m9n8idht9q7wPulJUr04LZWqjoEcZP2omJelJ1xpgG1QOYhAwA7LOQQOypVaKPoAczUuag+baqPNzbBvYwjuN4iwDjHy9Zmw71g5JYu7VYhp0AgoYJ0ZgNNWwKGtrCSXnEceaIjB7Uw+BWUyKWCSh/kxAyZbTWlVvfNQNAuyyz6WI5GeApAtRsljVyC0GPfRIpkiilvxc2YvVj9XKv1nd693qjqbIpX1CYvWb9HWp/VqeWAco/RlS",
+          "items": {
+            "count": 200,
+            "sum": 200,
+            "min": 1,
+            "max": 1,
+            "mean": 1.0
+          }
+        }
+      }
+    }
+  ],
+  "valid": true,
+  "best_step": null,
+  "best_rate": null
+}

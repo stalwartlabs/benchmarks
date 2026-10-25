@@ -1,0 +1,81 @@
+{
+  "run": "bench-c5-1025",
+  "track": "c",
+  "provider": "azure",
+  "regions": {
+    "main": {
+      "location": "southcentralus",
+      "resource_group": "sbench-bench-c5-1025"
+    }
+  },
+  "targets": {
+    "stalwart": "stalwart",
+    "dovecot": "dovecot"
+  },
+  "hosts": [
+    {
+      "name": "load1",
+      "role": "load",
+      "region": "main",
+      "size": "Standard_D16as_v7",
+      "nvme": false,
+      "private_ip": "10.10.0.4",
+      "provision": [
+        "os-tuning",
+        "loadgen"
+      ]
+    },
+    {
+      "name": "load2",
+      "role": "load",
+      "region": "main",
+      "size": "Standard_D16as_v7",
+      "nvme": false,
+      "private_ip": "10.10.0.7",
+      "provision": [
+        "os-tuning",
+        "loadgen"
+      ]
+    },
+    {
+      "name": "stalwart",
+      "role": "stalwart",
+      "region": "main",
+      "size": "Standard_D8ads_v7",
+      "nvme": true,
+      "private_ip": "10.10.0.5",
+      "provision": [
+        "os-tuning",
+        "stalwart"
+      ]
+    },
+    {
+      "name": "dovecot",
+      "role": "postfix-dovecot",
+      "region": "main",
+      "size": "Standard_D8ads_v7",
+      "nvme": true,
+      "private_ip": "10.10.0.8",
+      "provision": [
+        "os-tuning",
+        "postfix",
+        "dovecot"
+      ]
+    },
+    {
+      "name": "sink",
+      "role": "sink",
+      "region": "main",
+      "size": "Standard_D2as_v7",
+      "nvme": false,
+      "private_ip": "10.10.0.6",
+      "provision": [
+        "os-tuning",
+        "loadgen",
+        "dns-stub",
+        "sink"
+      ]
+    }
+  ],
+  "lbs": []
+}
